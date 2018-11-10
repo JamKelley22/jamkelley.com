@@ -3,5 +3,10 @@
 set +x
 npm run build
 
-npm start &
-echo $! > .pidfile
+pwd
+
+rm -rf /var/www/jamkelley.com/*
+
+cp -r build/* /var/www/jamkelley.com
+
+
