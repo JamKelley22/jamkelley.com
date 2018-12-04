@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Router, Link } from "react-router-dom"
+import { Router } from "react-router-dom"
 import { Switch, Route } from 'react-router'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -9,7 +9,7 @@ import {
 import {
   Landing,
   Error404
-} from './components'
+} from './pages'
 
 import { history, routes } from './routing'
 
@@ -31,6 +31,7 @@ class App extends Component {
       <div className="App">
         <Router history={history}>
           <Switch>
+            <Route exact path={routes._CONSTRUCTION} component={() => <Construction/>} />
             <Route exact path={routes._LANDING} component={() => <Landing/>} />
             <Route exact path={routes._CONTACT} component={() => <Construction/>} />
             <Route exact path={routes._PROJECTS} component={() => <Construction/>} />
