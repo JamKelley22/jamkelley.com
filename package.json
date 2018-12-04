@@ -2,6 +2,7 @@
   "name": "jamkelley.com",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jamkelley.com",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.8",
     "@fortawesome/free-solid-svg-icons": "^5.5.0",
