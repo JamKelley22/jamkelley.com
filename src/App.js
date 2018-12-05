@@ -6,6 +6,8 @@ import {
   faCheck,faBan,faEdit,faTrash,faPlusCircle,
   faEyeSlash,faEye,faCaretRight,faCaretDown
 } from '@fortawesome/free-solid-svg-icons'
+import { NavLink } from 'react-router-dom'
+
 import {
   Landing,
   Error404
@@ -47,5 +49,8 @@ class App extends Component {
 export default App;
 
 const Construction = () => (
-  <p>This website is under construction, visit my <a href='https://archive.jamkelley.com'>Archive</a> insted</p>
+  <div>
+    <p>This website is under construction, visit my <a href='https://archive.jamkelley.com'>Archive</a> insted</p>
+    <NavLink to={routes._LANDING}>Landing</NavLink>
+  </div>
 )
