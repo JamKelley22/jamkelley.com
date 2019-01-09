@@ -10,6 +10,7 @@ import { NavLink } from 'react-router-dom'
 
 import {
   Landing,
+  Downloads,
   Error404
 } from './pages'
 
@@ -38,6 +39,7 @@ class App extends Component {
             <Route exact path={routes._CONTACT} component={() => <Construction/>} />
             <Route exact path={routes._PROJECTS} component={() => <Construction/>} />
             <Route exact path={routes._RESUME} component={() => <Construction/>} />
+			<Route exact path={routes._DOWNLOADS} component={() => <Downloads/>} />
             <Route component={() => <Error404/>} />
           </Switch>
         </Router>
@@ -51,6 +53,7 @@ export default App;
 const Construction = () => (
   <div>
     <p>This website is under construction, visit my <a href='https://archive.jamkelley.com'>Archive</a> insted</p>
-    <NavLink to={routes._LANDING}>Landing</NavLink>
+    <NavLink to={routes._LANDING}>Landing</NavLink><br/>
+	<NavLink to={routes._DOWNLOADS}>Downloads</NavLink>
   </div>
 )

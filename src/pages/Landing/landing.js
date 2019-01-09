@@ -8,6 +8,7 @@ const Landing = (props) => {
   return (
     <div>
       <h1>Landing</h1>
+	  <hr/>
       <GitHub/>
     </div>
   )
