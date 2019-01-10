@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './github.module.scss'
 
@@ -9,7 +10,7 @@ class GitHub extends React.Component {
   }
 
   componentDidMount = async() => {
-    let user = 'JamKelley22';
+    let user = this.props.username;
     let userRes = await fetch(`https://api.github.com/users/${user}`, {
       method: 'GET'
     });
@@ -50,3 +51,11 @@ class GitHub extends React.Component {
 }
 
 export default GitHub;
+
+GitHub.propTypes = {
+  username: PropTypes.string
+}
+
+GitHub.defaultProps = {
+  username: 'JamKelley22'
+}
