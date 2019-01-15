@@ -14,8 +14,6 @@ import {
   Error404
 } from './pages'
 
-import Test from './test.js'
-
 import { history, routes } from './routing'
 
 import './App.module.scss';
@@ -26,7 +24,6 @@ library.add(
 )
 
 class App extends Component {
-
   render() {
     return (
       <div className="App">
@@ -41,7 +38,6 @@ class App extends Component {
             <Route component={() => <Error404/>} />
           </Switch>
         </Router>
-        <Test/>
       </div>
     );
   }

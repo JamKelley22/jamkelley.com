@@ -3,22 +3,27 @@ import PropTypes from 'prop-types'
 
 import './github.module.scss'
 
+const GITHUB_API_URL_BASE = 'https://api.github.com'
+
 class GitHub extends React.Component {
   state = {
       user: {},
       repos: []
   }
 
-  componentDidMount = async() => {
+  componentDidMount() {
+    this.refresh();
+  }
+
+  refresh = async() => {
     let user = this.props.username;
-    let userRes = await fetch(`https://api.github.com/users/${user}`, {
-      method: 'GET'
-    });
-    let repoRes = await fetch(`https://api.github.com/users/${user}/repos`, {
-      method: 'GET'
-    });
+    let userRes = await fetch(`${GITHUB_API_URL_BASE}/users/${user}`);
+    let repoRes = await fetch(`${GITHUB_API_URL_BASE}/users/${user}/repos`);
     let userData = await userRes.json();
     let repoData = await repoRes.json();
+    repoData = repoData.filter(repo => {
+      return repo.private === false;
+    })
     this.setState({
       user: userData,
       repos: repoData
@@ -45,6 +50,7 @@ class GitHub extends React.Component {
             )
           })
         }
+        <button onClick={this.refresh}>Refresh</button>
       </div>
     )
   }

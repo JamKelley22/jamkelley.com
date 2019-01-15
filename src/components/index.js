@@ -1,4 +1,5 @@
+import ChatBot from './ChatBot/chatbot.js'
 import GitHub from './GitHub/github.js'
 import { Video } from './YouTube'
 
-export { GitHub, Video }
+export { ChatBot, GitHub, Video }

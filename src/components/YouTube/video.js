@@ -40,9 +40,9 @@ class Video extends React.Component {
           type="text/html"
           style={style}
           src={videoSrc}
-          frameborder="0"
+          frameBorder="0"
           fullscreen="0"
-          allowfullscreen
+          allowFullScreen
           title={this.props.title}
         />
       </div>

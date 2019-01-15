@@ -7,7 +7,9 @@ const Downloads = (props) => {
     <div>
       <h1>Downloads</h1>
 	  <hr/>
-	  
+	  <h1>PunchClock</h1>
+    <h3>Track and take charge of your work hours!</h3>
+    <a href="http://jamkelley.com:3001/download">Install (Windows)</a>
     </div>
   )
 }
