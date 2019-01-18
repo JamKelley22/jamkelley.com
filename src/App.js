@@ -47,7 +47,7 @@ export default App;
 
 const Construction = () => (
   <div>
-    <p>This website is under construction, visit my <a href='https://archive.jamkelley.com'>Archive</a> insted</p>
+    <p>This website is under construction, please visit my <a href='https://archive.jamkelley.com'>Archive</a> instead</p>
     <NavLink to={routes._LANDING}>Landing</NavLink><br/>
 	<NavLink to={routes._DOWNLOADS}>Downloads</NavLink>
   </div>
