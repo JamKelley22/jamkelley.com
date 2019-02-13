@@ -1,27 +1,45 @@
 import React from 'react'
 
-import { ChatBot, GitHub, Video } from '../../components'
+import { ChatBot, GitHub, Video, Settings, ModelViewer } from '../../components'
+import { Button } from '../../util'
+import { ThemeConsumer } from '../../context'
 
-import './landing.module.scss'
+import './landing.scss'
 
 const Landing = (props) => {
   return (
-    <div>
-      <h1>Landing</h1>
+    <ThemeConsumer>
+      {themeObj =>
+        <div className='landingPage' style={themeObj.theme.base}>
+          <h1>Landing</h1>
 
-      <hr/>
+          <ModelViewer
+            modelURI={'https://now-ikegxmfsfc.now.sh'}
+          />
 
-      <ChatBot/>
+          <hr/>
+          <Button/>
 
-      <div style={{width: '300px'}}>
-        <Video src='6Fep0ocAJOc'/>
-      </div>
+          <hr/>
 
-      <hr/>
+          <Settings/>
 
-      <GitHub/>
-    </div>
+          <hr/>
+
+          <ChatBot/>
+
+          <div style={{width: '300px'}}>
+            <Video src='6Fep0ocAJOc'/>
+          </div>
+
+          <hr/>
+
+          <GitHub/>
+        </div>
+      }
+    </ThemeConsumer>
   )
 }
 
 export default Landing;
+//https://gltf-wybxbxlfnl.now.sh/T/coffee_cup.gltf

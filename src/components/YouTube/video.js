@@ -15,8 +15,7 @@ class Video extends React.Component {
   }
 
   render() {
-    let videoSrc = "https://www.youtube.com/embed/" +
-        this.props.src + "?autoplay=";
+    let videoSrc = `https://www.youtube.com/embed/${this.props.src}?autoplay=false`;
 
     let style = {}
     if(!this.state.isFullscreen) {

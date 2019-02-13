@@ -1,6 +1,6 @@
 import React from 'react'
 
-import * as _Dialogue from '../../util/dialogue'
+import { Dialogue } from '../../util'
 
 import './chatbot.module.scss'
 
@@ -11,7 +11,7 @@ class ChatBot extends React.Component {
   }
 
   componentDidMount() {
-    let currDNode = _Dialogue.dialogue.currDialogueNode;
+    let currDNode = Dialogue.currDialogueNode;
     if(currDNode !== null && currDNode !== undefined) {
       let responses = currDNode.responses;
       let prompt = currDNode.prompt;

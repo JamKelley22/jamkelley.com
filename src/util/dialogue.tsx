@@ -1,4 +1,4 @@
-class Dialogue {
+class DialogueStructure {
 	currDialogueNode: DialogueNode | null;
 	initDialogueNode: DialogueNode | null;
   constructor(initDialogueNode: DialogueNode) {
@@ -113,6 +113,6 @@ r82.setNextDialogueNode(dNode9);
 
 r91.setNextDialogueNode(dNode0);
 
-let dialogue = new Dialogue(dNode0);
+let Dialogue = new DialogueStructure(dNode0);
 
-export { Response, dialogue }
+export { Dialogue }
