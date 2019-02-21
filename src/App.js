@@ -9,12 +9,21 @@ import {
 import { NavLink } from 'react-router-dom'
 
 import {
-  Landing,
-	Accolades,
+  Accolades,
 	Assets,
+	Blog,
+	Contact,
 	Downloads,
-	Error404
+	Error404,
+	Landing,
+	Papers,
+	Projects,
+	Resume
 } from './pages'
+
+import {
+  Sidebar
+} from './components'
 
 import { history, routes } from './routing'
 
@@ -36,18 +45,22 @@ class App extends Component {
           <Backround/>
           <div className='content'>
             <Router history={history}>
-              <Switch>
-                <Route exact path={routes._CONSTRUCTION} component={() => <Construction/>} />
-                <Route exact path={routes._LANDING} component={() => <Landing/>} />
-                <Route exact path={routes._CONTACT} component={() => <Construction/>} />
-                <Route exact path={routes._PROJECTS} component={() => <Construction/>} />
-                <Route exact path={routes._RESUME} component={() => <Construction/>} />
-                <Route exact path={routes._DOWNLOADS} component={() => <Downloads/>} />
+              <div className='layout'>
+                <Sidebar/>
+                <Switch>
+                  <Route exact path={routes._CONSTRUCTION} component={() => <Construction/>} />
+                  <Route exact path={routes._LANDING} component={() => <Landing/>} />
+                  <Route exact path={routes._CONTACT} component={() => <Contact/>} />
+                  <Route exact path={routes._PROJECTS} component={() => <Projects/>} />
+                  <Route exact path={routes._RESUME} component={() => <Resume/>} />
+                  <Route exact path={routes._DOWNLOADS} component={() => <Downloads/>} />
 
-                <Route exact path={routes._ASSETS} component={() => <Assets/>} />
-                <Route exact path={routes._ACCOLADES} component={() => <Accolades/>} />
-                <Route component={() => <Error404/>} />
-              </Switch>
+                  <Route exact path={routes._ASSETS} component={() => <Assets/>} />
+                  <Route exact path={routes._ACCOLADES} component={() => <Accolades/>} />
+                  <Route exact path={routes._BLOG} component={() => <Blog/>} />
+                  <Route component={() => <Error404/>} />
+                </Switch>
+              </div>
             </Router>
           </div>
         </div>
@@ -105,7 +118,7 @@ const Construction = () => (
       <li><a href="https://twitter.com/JameelKelley">Twitter</a></li>
       <li><a href="https://www.instagram.com/jamkelley22/">Instagram</a></li>
       <li><a href="https://github.com/JamKelley22">GitHub</a></li>
-      <li><a href="https://stackoverflow.com/">StackOverflow</a></li>
+      <li><a href="https://stackoverflow.com/users/7732931/jameel-kelley">StackOverflow</a></li>
       <li><a href="https://www.linkedin.com/in/jamkelley22/">LinkedIn</a></li>
       <li><a href="https://dev.to/jamkelley22">Dev.to</a></li>
       <li><a href="https://www.youtube.com/channel/UCS-n7QNji8ZBA6SctaKFr5A">Youtube</a></li>

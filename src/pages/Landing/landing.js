@@ -13,10 +13,6 @@ const Landing = (props) => {
         <div className='landingPage' style={themeObj.theme.base}>
           <h1>Landing</h1>
 
-          <ModelViewer
-            modelURI={'https://now-ikegxmfsfc.now.sh'}
-          />
-
           <hr/>
           <Button/>
 

@@ -16,3 +16,8 @@
   overflow-y: auto;
   padding-left: 10px;
 }
+
+#layout {
+  display: flex;
+  flex-direction: row;
+}

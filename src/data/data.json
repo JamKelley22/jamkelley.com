@@ -1,0 +1,223 @@
+{
+  "pages": {
+    "accolades": {
+      "list": [
+        {
+          "name": "Intel Ultimate Coder Challenge Winner",
+          "uri": "https://software.intel.com/en-us/ultimate-coder-vr/team4",
+          "description": "",
+          "date": ""
+        }
+      ]
+    },
+    "assets": {
+
+    },
+    "blog": {
+
+    },
+    "contact": {
+
+    },
+    "downloads": {
+
+    },
+    "error": {
+
+    },
+    "landing": {
+
+    },
+    "papers": {
+      "list": [
+        {
+          "name": "Web Design with Accessibility in Mind",
+          "uri": "https://github.com/JamKelley22/accessible-design.jamkelley.com/blob/master/docs/Web%20Design%20with%20Accessibility%20in%20Mind.pdf",
+          "description": "",
+          "date": ""
+        }
+      ]
+    },
+    "projects": {
+      "list": [
+        {
+          "name": "RatePoint",
+          "uri": "http://ratepoint.jamkelley.com/",
+          "github": "https://github.com/JamKelley22/RatePoint",
+          "demo": "https://www.youtube.com/watch?v=6Fep0ocAJOc",
+          "description": "Rate & share locations around campus!",
+          "type": "WEBSITE",
+          "download": ""
+        },
+        {
+          "name": "HelpTrain",
+          "uri": "https://helptrain.space/",
+          "github": "https://github.com/samstifter/verbose-sniffle",
+          "demo": "",
+          "description": "",
+          "type": "WEBSITE",
+          "download": ""
+        },
+        {
+          "name": "S-PASS",
+          "uri": "https://coolslice-spass.herokuapp.com/",
+          "github": "https://github.com/JamKelley22/S-PASS",
+          "demo": "",
+          "description": "",
+          "type": "WEBSITE",
+          "download": ""
+        },
+        {
+          "name": "Pentachoron",
+          "uri": "",
+          "github": "https://github.com/JamKelley22/Pentachoron",
+          "demo": "",
+          "description": "",
+          "type": "DESKTOP_APP",
+          "download": "http://jamkelley.com:3001/download/pentachoron"
+        },
+        {
+          "name": "Bankey Bags",
+          "uri": "https://bankeybags.com/",
+          "github": "https://github.com/JamKelley22/Benkey-Bags",
+          "demo": "",
+          "description": "",
+          "type": "WEBSITE",
+          "download": ""
+        },
+        {
+          "name": "Alarm.me",
+          "uri": "https://alarm.jamkelley.com/",
+          "github": "https://github.com/JamKelley22/Alarm.me",
+          "demo": "",
+          "description": "",
+          "type": "WEBSITE",
+          "download": ""
+        },
+        {
+          "name": "PunchClock",
+          "uri": "",
+          "github": "https://github.com/samstifter/punchclock",
+          "demo": "",
+          "description": "",
+          "type": "DESKTOP_APP",
+          "download": "http://jamkelley.com:3001/download/punchclock"
+        },
+        {
+          "name": "VR Sprayer Sim",
+          "uri": "https://software.intel.com/en-us/ultimate-coder-vr/team4",
+          "github": "",
+          "demo": "",
+          "description": "",
+          "type": "VR",
+          "download": ""
+        },
+        {
+          "name": "Quizzer",
+          "uri": "",
+          "github": "https://github.com/JamKelley22/Quizzer",
+          "demo": "",
+          "description": "",
+          "type": "DESKTOP_APP",
+          "download": ""
+        },
+        {
+          "name": "On the Wind",
+          "uri": "https://globalgamejam.org/2019/games/wind-0",
+          "github": "https://github.com/JamKelley22/OnTheWind",
+          "demo": "",
+          "description": "",
+          "type": "GAME_JAM",
+          "download": ""
+        },
+        {
+          "name": "Eternal Vapor",
+          "uri": "https://jamkelley22.itch.io/eternal-vapor",
+          "github": "https://github.com/JamKelley22/eternal-vapor",
+          "demo": "",
+          "description": "",
+          "type": "GAME_JAM",
+          "download": ""
+        },
+        {
+          "name": "Patient Zero",
+          "uri": "https://globalgamejam.org/2018/games/patient-zero-10",
+          "github": "https://github.com/JamKelley22/GlobalGameJam2018",
+          "demo": "",
+          "description": "",
+          "type": "GAME_JAM",
+          "download": ""
+        },
+        {
+          "name": "KFZoo",
+          "uri": "https://globalgamejam.org/2017/games/kfzoo",
+          "github": "https://github.com/JamKelley22/Game_Jam_Spring_2017",
+          "demo": "",
+          "description": "",
+          "type": "GAME_JAM",
+          "download": ""
+        },
+        {
+          "name": "MinesweeperX",
+          "uri": "",
+          "github": "https://github.com/JamKelley22/Minesweeper_X",
+          "demo": "",
+          "description": "",
+          "type": "GAME",
+          "download": ""
+        },
+        {
+          "name": "Tic-Tac-ToeFX",
+          "uri": "",
+          "github": "https://github.com/JamKelley22/Tic-Tac-Toe-JavaFX",
+          "demo": "",
+          "description": "",
+          "type": "GAME",
+          "download": ""
+        },
+      ]
+    },
+    "resume": {
+
+    }
+  },
+  "social": {
+    "list": [
+      {
+        "name": "Twitter",
+        "uri": "https://twitter.com/JameelKelley",
+        "handle": "JameelKelley"
+      },
+      {
+        "name": "Instagram",
+        "uri": "https://www.instagram.com/jamkelley22/",
+        "handle": "jamkelley22"
+      },
+      {
+        "name": "GitHub",
+        "uri": "https://github.com/JamKelley22",
+        "handle": "JamKelley22"
+      },
+      {
+        "name": "StackOverflow",
+        "uri": "https://stackoverflow.com/users/7732931/jameel-kelley",
+        "handle": ""
+      },
+      {
+        "name": "LinkedIn",
+        "uri": "https://www.linkedin.com/in/jamkelley22/",
+        "handle": "jamkelley22"
+      },
+      {
+        "name": "Dev.to",
+        "uri": "https://dev.to/jamkelley22",
+        "handle": "jamkelley22"
+      },
+      {
+        "name": "Youtube",
+        "uri": "https://www.youtube.com/channel/UCS-n7QNji8ZBA6SctaKFr5A",
+        "handle": ""
+      },
+    ]
+  }
+}
