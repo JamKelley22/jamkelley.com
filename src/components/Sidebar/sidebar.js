@@ -21,6 +21,7 @@ class Sidebar extends React.Component {
           <NavLink to={routes._ACCOLADES}>Accolades</NavLink>&nbsp;
           <NavLink to={routes._ASSETS}>Assets</NavLink>&nbsp;
           <NavLink to={routes._BLOG}>Blog</NavLink>&nbsp;
+          <NavLink to={routes._SETTINGS}>Settings</NavLink>&nbsp;
         </div>
       }
       </ThemeConsumer>

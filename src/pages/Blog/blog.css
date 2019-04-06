@@ -1,0 +1,179 @@
+
+/*
+#postList {
+  overflow-y: auto;
+  height: 87%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#singlePost {
+  grid-row: 1;
+}
+
+#postListSelected {
+  display: block;
+  overflow-y: auto;
+  height: 95%;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#topBlog {
+  height: 13%;
+  min-height: 90px;
+}
+
+#postBreakLine {
+  display: none;
+}
+
+#searchTagList {
+  display: flex;
+  margin: 10px;
+  min-height: 33px;
+}
+
+#searchTag {
+  background-color: white;
+  padding: 3px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: black;
+  margin: 5px 0;
+  margin-left: 3px;
+  margin-right: 3px;
+  outline: none;
+  border: 0px;
+}
+
+#searchTagX {
+  color: gray;
+  padding: 3px;
+}
+
+#searchTag:hover #searchTagX{
+  color: red
+}
+
+#modalTagList {
+  display: flex;
+  margin: 10px;
+  min-height: 33px;
+}
+
+#modalTag {
+  background-color: #252627;
+  padding: 3px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: white;
+  margin: 5px 0;
+  margin-left: 3px;
+  margin-right: 3px;
+  cursor: pointer;
+  border: 1px solid white;
+  outline: none;
+}
+
+#modalTag:hover {
+  background-color: #252627;
+  color: white;
+  stroke: bold;
+  border: 1px solid rgb(8, 253, 216);
+}
+
+#addTagBtn {
+  font-size: 10px;
+  background-color: #252627;
+  color: white;
+  stroke: bold;
+  border: 1px solid rgb(8, 253, 216);
+  border-radius: 5px;
+  outline:none;
+  height: 25px;
+  margin: 5px 0;
+}
+
+#addTagBtn:hover {
+  background-color: rgba(8, 252, 215, 0.15);
+}
+
+#searchBar {
+  background-color: black;
+  color: white;
+  border: 0px;
+  box-shadow: none;
+}
+
+.modal-content {
+  border: 0px;
+  border-radius: 0px;
+}
+
+#modalHeader {
+  background-color: #252627;
+  color: white;
+}
+
+#modalBody {
+  background-color: black;
+  color: white;
+}
+
+#modalFooter {
+  background-color: #252627;
+  color: white;
+}
+
+#modalCloseBtn {
+  stroke: bold;
+  outline: none;
+  color: white;
+  background-color: #252627;
+  border: 1px solid rgb(8, 253, 216);
+  border-radius: 5px;
+}
+
+#modalCloseBtn:hover {
+  border: 1px solid red;
+}
+
+.close:hover {
+  color: red;
+}
+*/
+
+/*
+@media screen and (max-width: 800px) {
+  #postList {
+    display: block;
+  }
+
+  #postBreakLine {
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+    border-color: #8d8d8d;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  #postBreakLine:before {
+      display: block;
+      content: "";
+      height: 30px;
+      margin-top: -31px;
+      border-style: solid;
+      border-color: black;
+      border-width: 0 0 1px 0;
+      border-radius: 20px;
+      border-color: #8d8d8d;
+  }
+}
+*/

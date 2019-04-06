@@ -15,10 +15,12 @@ import {
 	Contact,
 	Downloads,
 	Error404,
+  Experience,
 	Landing,
 	Papers,
 	Projects,
-	Resume
+	Resume,
+  Settings
 } from './pages'
 
 import {
@@ -45,22 +47,24 @@ class App extends Component {
           <Backround/>
           <div className='content'>
             <Router history={history}>
-              <div className='layout'>
+              <React.Fragment>
                 <Sidebar/>
                 <Switch>
                   <Route exact path={routes._CONSTRUCTION} component={() => <Construction/>} />
                   <Route exact path={routes._LANDING} component={() => <Landing/>} />
                   <Route exact path={routes._CONTACT} component={() => <Contact/>} />
                   <Route exact path={routes._PROJECTS} component={() => <Projects/>} />
+                  <Route exact path={routes._EXPERIENCE} component={() => <Experience/>} />
                   <Route exact path={routes._RESUME} component={() => <Resume/>} />
                   <Route exact path={routes._DOWNLOADS} component={() => <Downloads/>} />
 
                   <Route exact path={routes._ASSETS} component={() => <Assets/>} />
                   <Route exact path={routes._ACCOLADES} component={() => <Accolades/>} />
                   <Route exact path={routes._BLOG} component={() => <Blog/>} />
+                  <Route exact path={routes._SETTINGS} component={() => <Settings/>} />
                   <Route component={() => <Error404/>} />
                 </Switch>
-              </div>
+              </React.Fragment>
             </Router>
           </div>
         </div>

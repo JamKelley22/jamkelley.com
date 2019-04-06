@@ -1,0 +1,158 @@
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <fstream>
+#include <cmath>
+#include <string>
+#include <vector>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+int _num = 0;
+
+struct res {
+	int type;
+	int units;
+};
+
+std::vector<res> read_res(std::string filename);
+void print_res(std::vector<res> r);
+long int get_file_size(std::string filename);
+
+int main()
+{
+	char *addr;
+	int fd = 0;
+	struct stat sb;
+	off_t offset, pa_offset;
+	size_t length;
+	ssize_t s;
+
+	/*
+	if (argc < 3 || argc > 4) {
+	   fprintf(stderr, "%s file offset [length]\n", argv[0]);
+	   exit(EXIT_FAILURE);
+	}
+	*/
+	char res[] = "res.txt";
+	fd = open(res, O_RDONLY);
+	if (fd == -1) {
+		perror("Open");
+		exit(EXIT_FAILURE);
+	}
+
+	if (fstat(fd, &sb) == -1) {
+	 perror("fstat");
+	 exit(EXIT_FAILURE);
+ 	}
+
+	offset = 0;
+	pa_offset = offset & ~(sysconf(_SC_PAGE_SIZE) - 1);
+
+	/*
+	if (offset >= sb.st_size) {
+	   fprintf(stderr, "offset is past end of file\n");
+	   exit(EXIT_FAILURE);
+	}
+
+	if (argc == 4) {
+	   length = atoi(argv[3]);
+	   if (offset + length > sb.st_size)
+	       length = sb.st_size - offset;
+
+
+	} else {
+	   length = sb.st_size - offset;
+	}
+	*/
+
+	//sb.st_size
+	addr = mmap(NULL, length + offset - pa_offset, PROT_READ,
+                       MAP_PRIVATE, fd, pa_offset);
+	if (addr == MAP_FAILED) {
+	 perror("mmap");
+	 exit(EXIT_FAILURE);
+ 	}
+
+	s = write(STDOUT_FILENO, addr, length);
+	if (s != length) {
+	   if (s == -1) {
+			 perror("write");
+			 exit(EXIT_FAILURE);
+	  	}
+
+	   fprintf(stderr, "partial write");
+	   exit(EXIT_FAILURE);
+	}
+
+	munmap(addr, length);
+	close(fd);
+
+	exit(EXIT_SUCCESS);
+
+
+	/*
+	long int file_size = 0;
+
+	// opens res.txt
+	int fd = open("res.txt".c_str(), O_RDONLY);
+	if (fd == -1) {
+		perror("Open");
+		exit(EXIT_FAILURE);
+	}
+
+	file_size = get_file_size(fd);
+	if(file_size == -1) {
+		perror("File Size");
+		exit(EXIT_FAILURE);
+	}
+	*/
+
+	// maps to memory file
+
+
+	//std::vector<res> r = read_res("res.txt");
+	//print_res(r);
+	//printf("%ld",get_file_size("res.txt"));
+}
+
+std::vector<res> read_res(std::string filename) {
+	std::vector<res> r;
+	std::ifstream input(filename.c_str());
+	std::ifstream counter(filename.c_str());
+	if(!input.is_open() || !counter.is_open()) {
+		std::cout << "File " << filename << " not opened\n";
+		return r;
+	}
+	int num_lines = 0, a = 0, b = 0;
+	while (counter >> a >> b) { num_lines++; }
+
+	//res *r = (res*)malloc(num_lines * sizeof(res));
+	for(int i = 0; input >> a >> b; i++) {
+		r.push_back({a,b});
+	}
+	return r;
+
+}
+
+void print_res(std::vector<res> r) {
+	for(std::size_t i=0; i<r.size(); ++i)
+		std::cout << r[i].type << "\t" << r[i].units << std::endl;
+}
+
+long int get_file_size(int fd) {
+	struct stat sb;
+
+	if (fstat(fd, &sb) == -1) {
+		perror("stat");
+		return -1;
+		//exit(EXIT_FAILURE);
+	}
+
+	return (long int)sb.st_size;
+}

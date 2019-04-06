@@ -25,6 +25,20 @@
     "error": {
 
     },
+    "experience": {
+      "list": [
+        {
+          "employer": "Virtual Reality Applications Center",
+          "title": "Research Assistant",
+          "startDate": "2018-01-14T15:30:40.719Z",
+          "endDate": "",
+          "isCurrent": true,
+          "tasks": [
+            "Working with Unity to create a learning system in mixed reality leveraging the HTC Vive"
+          ]
+        }
+      ]
+    },
     "landing": {
 
     },

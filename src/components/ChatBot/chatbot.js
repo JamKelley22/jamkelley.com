@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Dialogue } from '../../util'
 
-import './chatbot.module.scss'
+import './chatbot.scss'
 
 class ChatBot extends React.Component {
   state = {
@@ -11,6 +11,11 @@ class ChatBot extends React.Component {
   }
 
   componentDidMount() {
+    this.initDialogue();
+  }
+
+
+  initDialogue = () => {
     let currDNode = Dialogue.currDialogueNode;
     if(currDNode !== null && currDNode !== undefined) {
       let responses = currDNode.responses;

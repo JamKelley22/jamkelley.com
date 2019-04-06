@@ -153,7 +153,7 @@ class ModelViewer extends React.Component {
         />
         <div className='viewerOverlay' id='settingsPanal'>
           <button onClick={this.toggleSettings}>Q</button>
-          <div id='allSettings' style={{display:`${this.state.settingsOpen == true ? 'block' : 'none'}`}}>
+          <div id='allSettings' style={{display:`${this.state.settingsOpen === true ? 'block' : 'none'}`}}>
             <SettingAdjust
               onRight={() => this.setLightIntensity(Math.min(this.state.lightingValue+1,15))}
               onLeft={() => this.setLightIntensity(Math.max(this.state.lightingValue-1,0))}
@@ -170,7 +170,7 @@ class ModelViewer extends React.Component {
         :
         <div
           className="lds-hourglass viewerOverlay"
-          style={{display:`${this.state.modelLoaded == false ? 'block' : 'none'}`}}
+          style={{display:`${this.state.modelLoaded === false ? 'block' : 'none'}`}}
         />
       }
 

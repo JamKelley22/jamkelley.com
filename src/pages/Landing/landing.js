@@ -1,36 +1,19 @@
 import React from 'react'
 
-import { ChatBot, GitHub, Video, Settings, ModelViewer } from '../../components'
+import { ChatBot, GitHub, Video, Settings, ModelViewer, QOTD } from '../../components'
 import { Button } from '../../util'
 import { ThemeConsumer } from '../../context'
 
 import './landing.scss'
 
 const Landing = (props) => {
+
   return (
     <ThemeConsumer>
       {themeObj =>
         <div className='landingPage' style={themeObj.theme.base}>
-          <h1>Landing</h1>
-
-          <hr/>
-          <Button/>
-
-          <hr/>
-
-          <Settings/>
-
-          <hr/>
-
           <ChatBot/>
-
-          <div style={{width: '300px'}}>
-            <Video src='6Fep0ocAJOc'/>
-          </div>
-
-          <hr/>
-
-          <GitHub/>
+          <QOTD/>
         </div>
       }
     </ThemeConsumer>
@@ -39,3 +22,9 @@ const Landing = (props) => {
 
 export default Landing;
 //https://gltf-wybxbxlfnl.now.sh/T/coffee_cup.gltf
+/*
+<div style={{width: '300px'}}>
+  <Video src='6Fep0ocAJOc'/>
+</div>
+
+*/
