@@ -1,63 +1,35 @@
-import React, { Component } from "react";
-import { Layout, Menu, Icon } from "antd";
+import React from "react";
+import { withRouter } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+//import { faCheckSquare, faCoffee } from "@fortawesome/free-solid-svg-icons";
+
+import { ALL_ROUTES, CustomRoute, HOME } from "./routes";
+import Nav from "./Nav";
 
 import "./App.scss";
 
-const { Header, Sider, Content } = Layout;
+library.add(fab);
 
-class App extends Component {
-  state = {
-    collapsed: false
-  };
+const App: React.FC = (props: any) => {
+  return (
+    <div className="App">
+      <div id="navagationLinksContainer">
+        <Nav />
+        {/*props.location.pathname !== HOME.route ? Nav : null*/}
+      </div>
+      <div id="page">
+        <Switch>
+          {ALL_ROUTES.map((route: CustomRoute, i: number) => (
+            <Route key={i} exact path={route.route}>
+              {route.page}
+            </Route>
+          ))}
+        </Switch>
+      </div>
+    </div>
+  );
+};
 
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  };
-
-  render() {
-    return (
-      <Layout>
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-          <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-            <Menu.Item key="1">
-              <Icon type="user" />
-              <span>nav 1</span>
-            </Menu.Item>
-            <Menu.Item key="2">
-              <Icon type="video-camera" />
-              <span>nav 2</span>
-            </Menu.Item>
-            <Menu.Item key="3">
-              <Icon type="upload" />
-              <span>nav 3</span>
-            </Menu.Item>
-          </Menu>
-        </Sider>
-        <Layout>
-          <Header style={{ background: "#fff", padding: 0 }}>
-            <Icon
-              className="trigger"
-              type={this.state.collapsed ? "menu-unfold" : "menu-fold"}
-              onClick={this.toggle}
-            />
-          </Header>
-          <Content
-            style={{
-              margin: "24px 16px",
-              padding: 24,
-              background: "#fff",
-              minHeight: 280
-            }}
-          >
-            Content
-          </Content>
-        </Layout>
-      </Layout>
-    );
-  }
-}
-
-export default App;
+export default withRouter(props => <App {...props} />);

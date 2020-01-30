@@ -1,0 +1,15 @@
+#chatbot {
+  padding: 1em;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  width: 60%;
+  text-align: center;
+}
+
+#allResponses {
+  display: flex;
+  justify-content: space-evenly;
+  #response {
+    margin: 10px;
+  }
+}

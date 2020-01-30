@@ -1,0 +1,45 @@
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  h1 {
+    /*font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;*/
+    font-weight: 100;
+    font-size: 5em;
+    margin: 0px;
+    color: rgb(129, 129, 129);
+  }
+  a {
+    font-style: normal !important;
+    font-size: large;
+  }
+}
+
+#icons {
+  a {
+    margin: 15px;
+    color: black;
+    font-size: 2em;
+  }
+}
+
+#info {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  #left {
+    margin: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+#ebet {
+  width: 12em;
+  margin-top: -100px;
+}
