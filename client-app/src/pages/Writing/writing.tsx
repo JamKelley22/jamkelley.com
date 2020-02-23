@@ -15,7 +15,7 @@ export default class Writing extends React.Component<
     writingFilenames: []
   };
   componentDidMount() {
-    axios.get("https://jamkelley.com/writing/").then(response => {
+    axios.get("https://jamkelley.com/api/writing").then(response => {
       this.setState({
         writingFilenames: response.data
       });
@@ -34,7 +34,7 @@ export default class Writing extends React.Component<
           {this.state.writingFilenames.map(
             (filename: string, index: number) => (
               <li key={index}>
-                <a href={`https://jamkelley.com/writing/${filename}`}>
+                <a href={`https://jamkelley.com/api/writing/${filename}`}>
                   {filename
                     .split(".")[0]
                     .split(/(?=[A-Z][^A-Z])/)

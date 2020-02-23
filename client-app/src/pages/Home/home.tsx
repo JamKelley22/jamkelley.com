@@ -10,7 +10,7 @@ import "./home.scss";
 const Home: React.FC = () => {
   return (
     <div className="Home">
-      <img src={Ebet} id="ebet" />
+      <img src={Ebet} id="ebet" alt="Elephant Logo" />
       <h1>Jameel Kelley</h1>
       <div id="icons">
         <a href="https://github.com/JamKelley22/">
@@ -24,9 +24,6 @@ const Home: React.FC = () => {
         </a>
         <a href="https://twitter.com/JameelKelley">
           <FontAwesomeIcon icon={["fab", "twitter"]} />
-        </a>
-        <a href="https://www.facebook.com/JamKelley22">
-          <FontAwesomeIcon icon={["fab", "facebook"]} />
         </a>
         <a href="https://www.instagram.com/jamkelley22">
           <FontAwesomeIcon icon={["fab", "instagram"]} />

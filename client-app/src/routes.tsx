@@ -1,5 +1,12 @@
 import React from "react";
-import { Home, Error404, Projects, Accolades, Writing } from "./pages";
+import {
+  Home,
+  Error404,
+  Projects,
+  Accolades,
+  Writing,
+  Downloads
+} from "./pages";
 
 class CustomRoute {
   name: string;
@@ -31,11 +38,6 @@ const Contact: CustomRoute = new CustomRoute({
   page: Error404,
   route: "/contact"
 });
-const Downloads: CustomRoute = new CustomRoute({
-  name: "Downloads",
-  page: Error404,
-  route: "/downloads"
-});
 const Settings: CustomRoute = new CustomRoute({
   name: "Settings",
   page: Error404,
@@ -44,7 +46,7 @@ const Settings: CustomRoute = new CustomRoute({
 const Resume: CustomRoute = new CustomRoute({
   name: "Resume",
   page: () => {},
-  route: "http://jamkelley.com:8080/resume/pdf"
+  route: "http://jamkelley.com/api/resume/pdf"
 });
 const Archive: CustomRoute = new CustomRoute({
   name: "Archive",
@@ -61,13 +63,18 @@ const WRITNG: CustomRoute = new CustomRoute({
   page: () => <Writing />,
   route: "/writing"
 });
+const DOWNLOADS: CustomRoute = new CustomRoute({
+  name: "Downloads",
+  page: () => <Downloads />,
+  route: "/downloads"
+});
 
 const ALL_ROUTES: CustomRoute[] = [
   HOME,
   Blog,
   PROJECTS,
   Contact,
-  Downloads,
+  DOWNLOADS,
   Archive,
   Settings,
   ACCOLADES,
@@ -80,7 +87,7 @@ const NAVAGATION: CustomRoute[] = [
   //Blog,
   PROJECTS,
   //Contact
-  //Downloads,
+  DOWNLOADS,
   ACCOLADES,
   Archive,
   WRITNG
