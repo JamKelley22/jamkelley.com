@@ -91,19 +91,6 @@ const Projects: React.FunctionComponent<IProjectsProps> = props => {
           </ul>
         </li>
       </ul>
-      <h3>Download links for previous projects</h3>
-      <h3>Writing</h3>
-      <a href="https://github.com/JamKelley22/accessible-design.jamkelley.com/blob/master/docs/Web%20Design%20with%20Accessibility%20in%20Mind.pdf">
-        Web Design with Accessibility in Mind
-      </a>
-      <h3>Talks</h3>
-      <ul>
-        <li>
-          <a href="https://www.youtube.com/watch?v=2UXV6aRiF5I">
-            Unity Networking Workshop
-          </a>
-        </li>
-      </ul>
     </div>
   );
 };

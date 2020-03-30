@@ -1,7 +1,6 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import Nav from "../../Nav";
+import { Icons, MakeIcon, Icon } from "./icons";
 import { Chatbot } from "../../components";
 
 import Ebet from "../../images/ebet.png";
@@ -13,27 +12,9 @@ const Home: React.FC = () => {
       <img src={Ebet} id="ebet" alt="Elephant Logo" />
       <h1>Jameel Kelley</h1>
       <div id="icons">
-        <a href="https://github.com/JamKelley22/">
-          <FontAwesomeIcon icon={["fab", "github"]} />
-        </a>
-        <a href="https://www.youtube.com/channel/UCS-n7QNji8ZBA6SctaKFr5A">
-          <FontAwesomeIcon icon={["fab", "youtube"]} />
-        </a>
-        <a href="https://dev.to/jamkelley22">
-          <FontAwesomeIcon icon={["fab", "dev"]} />
-        </a>
-        <a href="https://twitter.com/JameelKelley">
-          <FontAwesomeIcon icon={["fab", "twitter"]} />
-        </a>
-        <a href="https://www.instagram.com/jamkelley22">
-          <FontAwesomeIcon icon={["fab", "instagram"]} />
-        </a>
-        <a href="https://www.linkedin.com/in/jamkelley22/">
-          <FontAwesomeIcon icon={["fab", "linkedin"]} />
-        </a>
-        <a href="https://stackoverflow.com/users/7732931/jameel-kelley">
-          <FontAwesomeIcon icon={["fab", "stack-overflow"]} />
-        </a>
+        {Icons.map((icon: Icon, i: number) =>
+          MakeIcon(icon.href, icon.icon, i)
+        )}
       </div>
       <br />
       <hr style={{ width: "80%" }} />

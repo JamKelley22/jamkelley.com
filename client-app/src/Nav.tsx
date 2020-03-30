@@ -13,15 +13,16 @@ class Nav extends React.Component<INavProps & RouteComponentProps> {
     return (
       <div id="navagationLinks">
         {NAVAGATION.map((route: CustomRoute, i: number) => {
-          const seperator = i == 0 ? "" : this.props.seperator || "";
+          const seperator = i === 0 ? "" : this.props.seperator || "";
           return /^https?:\/\//.test(route.route) ? (
-            <a key={i} href={route.route}>
+            <a key={i} href={route.route} onClick={route.onClick}>
               {seperator} {route.name}
             </a>
           ) : (
             <Link
               key={i}
               to={route.route}
+              onClick={route.onClick}
               id={
                 route.route === this.props.location.pathname
                   ? "currentRoute"
