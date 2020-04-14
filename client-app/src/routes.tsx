@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { message } from "antd";
 
 import {
   Home,
@@ -8,9 +9,10 @@ import {
   Accolades,
   Writing,
   Downloads,
-  Speaking
+  Speaking,
 } from "./pages";
-import { message } from "antd";
+
+import PageData from "./data/pageData.json";
 
 class CustomRoute {
   name: string;
@@ -30,9 +32,10 @@ const getResumeRoute = async (): Promise<string> => {
     const response = await axios.get(
       "http://jamkelley.com/api/resume/pdf/status"
     );
+    if (response.data.error) {
+      throw response.data;
+    }
   } catch (e) {
-    console.log(e.response);
-
     if (e.response.data.error) {
       message.error(e.response.data.message);
     }
@@ -45,72 +48,72 @@ export const HOME: CustomRoute = new CustomRoute({
   name: "Home",
   page: Home,
   route: "/",
-  onClick: () => {}
+  onClick: () => {},
 });
 const Blog: CustomRoute = new CustomRoute({
   name: "Blog",
   page: Error404,
   route: "/blog",
-  onClick: () => {}
+  onClick: () => {},
 });
 const PROJECTS: CustomRoute = new CustomRoute({
   name: "Projects",
   page: Projects,
   route: "/projects",
-  onClick: () => {}
+  onClick: () => {},
 });
 const Contact: CustomRoute = new CustomRoute({
   name: "Contact",
   page: Error404,
   route: "/contact",
-  onClick: () => {}
+  onClick: () => {},
 });
 const Settings: CustomRoute = new CustomRoute({
   name: "Settings",
   page: Error404,
   route: "/settings",
-  onClick: () => {}
+  onClick: () => {},
 });
 const Resume: CustomRoute = new CustomRoute({
   name: "Resume",
   page: () => {},
-  route: "#", //getResumeRoute()
+  route: "#",
   onClick: async () => {
     try {
       const resumeRoute = await getResumeRoute();
       window.open(resumeRoute);
     } catch (e) {}
-  }
+  },
 });
 const Archive: CustomRoute = new CustomRoute({
   name: "Archive",
   page: () => {},
   route: "https://archive.jamkelley.com",
-  onClick: () => {}
+  onClick: () => {},
 });
 const ACCOLADES: CustomRoute = new CustomRoute({
   name: "Accolades",
   page: Accolades,
   route: "/accolades",
-  onClick: () => {}
+  onClick: () => {},
 });
 const WRITNG: CustomRoute = new CustomRoute({
   name: "Writing",
   page: () => <Writing />,
   route: "/writing",
-  onClick: () => {}
+  onClick: () => {},
 });
 const SPEAKING: CustomRoute = new CustomRoute({
   name: "Speaking",
   page: () => <Speaking />, //Todo
   route: "/speaking",
-  onClick: () => {}
+  onClick: () => {},
 });
 const DOWNLOADS: CustomRoute = new CustomRoute({
   name: "Downloads",
   page: () => <Downloads />,
   route: "/downloads",
-  onClick: () => {}
+  onClick: () => {},
 });
 
 const ALL_ROUTES: CustomRoute[] = [
@@ -123,7 +126,7 @@ const ALL_ROUTES: CustomRoute[] = [
   Settings,
   ACCOLADES,
   WRITNG,
-  SPEAKING
+  SPEAKING,
 ];
 
 const NAVAGATION: CustomRoute[] = [
@@ -136,7 +139,7 @@ const NAVAGATION: CustomRoute[] = [
   ACCOLADES,
   Archive,
   WRITNG,
-  SPEAKING
+  SPEAKING,
   //Settings
 ];
 

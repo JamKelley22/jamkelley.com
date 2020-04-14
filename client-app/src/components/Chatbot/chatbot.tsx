@@ -1,11 +1,14 @@
 import React from "react";
+import { Button, Spin } from "antd";
 
-import { Response, DialogueNode, Dialogue } from "./dialogue";
-import { Button } from "antd";
+import { IAPIHandler, FakeAPIHandler, APIHandler } from "../../api/handler";
+import { Response, DialogueNode, ChatbotDialogue } from "./types";
 
 import "./chatbot.scss";
 
-export interface IChatbotProps {}
+export interface IChatbotProps {
+  handler?: IAPIHandler;
+}
 
 interface IChatbotState {
   currNode: DialogueNode | null;
@@ -16,22 +19,31 @@ export default class Chatbot extends React.Component<
   IChatbotProps,
   IChatbotState
 > {
-  state = {
-    currNode: Dialogue.currDialogueNode,
-    currResponses: []
+  static defaultProps = {
+    handler:
+      process.env.NODE_ENV === "production"
+        ? new APIHandler()
+        : new FakeAPIHandler(),
+  };
+
+  state: IChatbotState = {
+    currNode: null,
+    currResponses: [],
   };
 
   componentDidMount() {
     this.initDialogue();
   }
 
-  initDialogue = () => {
-    let currDNode = Dialogue.currDialogueNode;
-    if (currDNode !== null && currDNode !== undefined) {
+  initDialogue = async () => {
+    const dialogue: ChatbotDialogue = await this.props.handler!.getChatbotDialogue();
+    const currDNode: DialogueNode | null = dialogue.createDialogueStructure()
+      .currDialogueNode;
+    if (currDNode) {
       let responses = currDNode.responses;
       this.setState({
         currNode: currDNode,
-        currResponses: responses
+        currResponses: responses,
       });
     }
   };
@@ -39,13 +51,13 @@ export default class Chatbot extends React.Component<
   update = (newNode: DialogueNode, newResponses: Response[]) => {
     this.setState({
       currNode: newNode,
-      currResponses: newResponses
+      currResponses: newResponses,
     });
   };
 
   updateWithResponse = (response: Response) => {
     let dNode = response.nextNode;
-    if (dNode !== null) {
+    if (dNode) {
       let newResponses = dNode.responses;
       this.update(dNode, newResponses);
     } else {
@@ -53,13 +65,13 @@ export default class Chatbot extends React.Component<
   };
 
   public render() {
-    const { currNode } = this.state;
-    if (!currNode) return;
+    const { currNode, currResponses } = this.state;
+    if (!currNode) return <Spin />;
     return (
       <div id="chatbot">
         <h3>{currNode!.prompt}</h3>
         <div id="allResponses">
-          {this.state.currResponses.map((response: Response, i: number) => {
+          {currResponses.map((response: Response, i: number) => {
             return (
               <div key={i} id="response">
                 <Button onClick={() => this.updateWithResponse(response)}>

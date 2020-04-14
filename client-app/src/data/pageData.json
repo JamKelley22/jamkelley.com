@@ -1,13 +1,58 @@
 {
   "pages": [
     {
+      "Accolades": {
+        "items": [
+          {
+            "title": "Intel Ultimate Coder Challenge Winner",
+            "detail": null,
+            "description": "\"Innovative Training Simulator for an Agricultural Sprayer Takes Top Honors in a Field of Eight Intel® Software Innovator Teams\" - Intel",
+            "url": "https://software.intel.com/en-us/blogs/2018/12/04/crop-dusters-win-ultimate-coder-iv-vr-challenge",
+            "fallbackURL": "https://web.archive.org/web/20200414020901/https://software.intel.com/en-us/blogs/2018/12/04/crop-dusters-win-ultimate-coder-iv-vr-challenge",
+            "isoStartDate": "2018-12-05T06:00:00.000Z",
+            "isoEndDate": null,
+            "location": null
+          },
+          {
+            "title": "SPIRE-EIT REU",
+            "detail": "Summer Program for Interdisciplinary Research and Education – Emerging Interface Technologies",
+            "description": "That time I talked about UNet (before it was depricated)",
+            "url": "http://www.vrac.iastate.edu/hci/reu/reu2017/",
+            "fallbackURL": "https://web.archive.org/web/20200414022549/http://www.vrac.iastate.edu/hci/reu/reu2017/",
+            "isoStartDate": "2017-05-26T05:00:00.000Z",
+            "isoEndDate": null,
+            "location": null
+          }
+        ]
+      },
+      "Downloads": {
+        "items": []
+      },
+      "Error": {
+        "items": []
+      },
+      "Home": {
+        "items": []
+      },
+      "Projects": {
+        "items": []
+      },
       "Speaking": {
         "items": [
           {
-            "name": "Unity Networking Workshop",
-            "url": "https://www.youtube.com/watch?v=2UXV6aRiF5I"
+            "title": "Unity Networking Workshop",
+            "detail": null,
+            "description": "That time I talked about UNet (before it was depricated)",
+            "url": "https://www.youtube.com/watch?v=2UXV6aRiF5I",
+            "fallbackURL": null,
+            "isoStartDate": "2018-03-28T05:00:00.000Z",
+            "isoEndDate": null,
+            "location": null
           }
         ]
+      },
+      "Writing": {
+        "items": []
       }
     }
   ]

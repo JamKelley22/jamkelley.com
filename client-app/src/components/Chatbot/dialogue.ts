@@ -1,133 +1,98 @@
-class DialogueStructure {
-  currDialogueNode: DialogueNode | null;
-  initDialogueNode: DialogueNode | null;
-  constructor(initDialogueNode: DialogueNode) {
-    this.initDialogueNode = initDialogueNode;
-    this.currDialogueNode = initDialogueNode;
-  }
+// //Construct all responses
+// const r01: Response = new Response("Hi Jameel!");
+// const r02: Response = new Response("Tell me about yourself");
+// const a0: ResponseSet = new ResponseSet([r01, r02]);
 
-  nextDialogueNode(selectedResponse: Response) {
-    this.currDialogueNode = selectedResponse.nextNode;
-  }
-}
+// const r11: Response = new Response("Education and Projects");
+// const r12: Response = new Response("Who are you?");
+// const a1: ResponseSet = new ResponseSet([r11, r12]);
 
-class DialogueNode {
-  responses: Response[];
-  prompt: string;
-  constructor(prompt: string, responses: Response[]) {
-    this.prompt = prompt;
-    this.responses = responses;
-  }
-}
+// const r21: Response = new Response("Do you have any examples?");
+// const r22: Response = new Response("That's really cool!");
+// const a2: ResponseSet = new ResponseSet([r21, r22]);
 
-class Response {
-  text: string;
-  nextNode: DialogueNode | null;
-  constructor(text: string) {
-    this.text = text;
-    this.nextNode = null;
-  }
+// const r31: Response = new Response("Game Jams");
+// const r32: Response = new Response("Personal Projects");
+// const r33: Response = new Response("Team Projects");
+// const a3: ResponseSet = new ResponseSet([r31, r32, r33]);
 
-  setNextDialogueNode(nextNode: DialogueNode | null) {
-    this.nextNode = nextNode;
-  }
-}
+// const r41: Response = new Response("Restart");
+// const a4: ResponseSet = new ResponseSet([r41]);
 
-//Construct all responses
-let r01 = new Response("Hi Jameel!");
-let r02 = new Response("Tell me about yourself");
-let r0 = [r01, r02];
+// const r51: Response = new Response("Restart");
+// const a5: ResponseSet = new ResponseSet([r51]);
 
-let r11 = new Response("Education and Projects");
-let r12 = new Response("Who are you?");
-let r1 = [r11, r12];
+// const r61: Response = new Response("Game Jams");
+// const r62: Response = new Response("Personal Projects");
+// const r63: Response = new Response("Team Projects");
+// const a6: ResponseSet = new ResponseSet([r61, r62, r63]);
 
-let r21 = new Response("Do you have any examples?");
-let r22 = new Response("That's really cool!");
-let r2 = [r21, r22];
+// const r71: Response = new Response("Restart");
+// const a7: ResponseSet = new ResponseSet([r71]);
 
-let r31 = new Response("Game Jams");
-let r32 = new Response("Personal Projects");
-let r33 = new Response("Team Projects");
-let r3 = [r31, r32, r33];
+// const r81: Response = new Response("Education and Projects");
+// const r82: Response = new Response("Who are you?");
+// const a8: ResponseSet = new ResponseSet([r81, r82]);
 
-let r41 = new Response("Restart");
-let r4 = [r41];
+// const r91: Response = new Response("Restart");
+// const a9: ResponseSet = new ResponseSet([r91]);
 
-let r51 = new Response("Restart");
-let r5 = [r51];
+// //Construct all DialogueNodes
+// let dNode0 = new DialogueNode("Welcome to my website!", a0);
+// let dNode1 = new DialogueNode(
+//   "Sure! Like school and what I've been working on, or who I am and what I do for fun?",
+//   a1
+// );
+// let dNode2 = new DialogueNode(
+//   "It's my final year at Iowa State University and I will be graduating in May 2020 with a BS in Software Engineering. I'm currently focusing on Web and VR Devlopment. ",
+//   a2
+// );
+// let dNode3 = new DialogueNode("Definatly!", a3);
+// let dNode4 = new DialogueNode("4-Game Jams", a4);
+// let dNode5 = new DialogueNode("5-Personal Projects", a5);
+// let dNode6 = new DialogueNode(
+//   "I know right! It's amazing creating things. Programming is a rewarding skill to have and Engineering only enhanses what one can do in the real world. Wanna check out what I've done so far?",
+//   a6
+// );
+// let dNode7 = new DialogueNode("7-Team Projects", a7);
+// let dNode8 = new DialogueNode(
+//   "Hello stranger! Thanks for visiting :) Anything you want to know?",
+//   a8
+// );
+// let dNode9 = new DialogueNode(
+//   "Origami, Game Dev Club, Running 5K, Anime, Guitar, Audiobooks, Driving",
+//   a9
+// );
 
-let r61 = new Response("Game Jams");
-let r62 = new Response("Personal Projects");
-let r63 = new Response("Team Projects");
-let r6 = [r61, r62, r63];
+// //For each response add next DialogueNode
+// r01.setNextDialogueNode(dNode8);
+// r02.setNextDialogueNode(dNode1);
 
-let r71 = new Response("Restart");
-let r7 = [r71];
+// r11.setNextDialogueNode(dNode2);
+// r12.setNextDialogueNode(dNode9);
 
-let r81 = new Response("Education and Projects");
-let r82 = new Response("Who are you?");
-let r8 = [r81, r82];
+// r21.setNextDialogueNode(dNode3);
+// r22.setNextDialogueNode(dNode6);
 
-let r91 = new Response("Restart");
-let r9 = [r91];
+// r31.setNextDialogueNode(dNode4);
+// r32.setNextDialogueNode(dNode5);
+// r33.setNextDialogueNode(dNode7);
 
-//Construct all DialogueNodes
-let dNode0 = new DialogueNode("Welcome to my website!", r0);
-let dNode1 = new DialogueNode(
-  "Sure! Like school and what I've been working on, or who I am and what I do for fun?",
-  r1
-);
-let dNode2 = new DialogueNode(
-  "It's my final year at Iowa State University and I will be graduating in May 2020 with a BS in Software Engineering. I'm currently focusing on Web and VR Devlopment. ",
-  r2
-);
-let dNode3 = new DialogueNode("Definatly!", r3);
-let dNode4 = new DialogueNode("4-Game Jams", r4);
-let dNode5 = new DialogueNode("5-Personal Projects", r5);
-let dNode6 = new DialogueNode(
-  "I know right! It's amazing creating things. Programming is a rewarding skill to have and Engineering only enhanses what one can do in the real world. Wanna check out what I've done so far?",
-  r6
-);
-let dNode7 = new DialogueNode("7-Team Projects", r7);
-let dNode8 = new DialogueNode(
-  "Hello stranger! Thanks for visiting :) Anything you want to know?",
-  r8
-);
-let dNode9 = new DialogueNode(
-  "Origami, Game Dev Club, Running 5K, Anime, Guitar, Audiobooks, Driving",
-  r9
-);
+// r41.setNextDialogueNode(dNode0);
 
-//For each response add next DialogueNode
-r01.setNextDialogueNode(dNode8);
-r02.setNextDialogueNode(dNode1);
+// r51.setNextDialogueNode(dNode0);
 
-r11.setNextDialogueNode(dNode2);
-r12.setNextDialogueNode(dNode9);
+// r61.setNextDialogueNode(dNode4);
+// r62.setNextDialogueNode(dNode5);
+// r63.setNextDialogueNode(dNode7);
 
-r21.setNextDialogueNode(dNode3);
-r22.setNextDialogueNode(dNode6);
+// r71.setNextDialogueNode(dNode0);
 
-r31.setNextDialogueNode(dNode4);
-r32.setNextDialogueNode(dNode5);
-r33.setNextDialogueNode(dNode7);
+// r81.setNextDialogueNode(dNode2);
+// r82.setNextDialogueNode(dNode9);
 
-r41.setNextDialogueNode(dNode0);
+// r91.setNextDialogueNode(dNode0);
 
-r51.setNextDialogueNode(dNode0);
+class test {}
 
-r61.setNextDialogueNode(dNode4);
-r62.setNextDialogueNode(dNode5);
-r63.setNextDialogueNode(dNode7);
-
-r71.setNextDialogueNode(dNode0);
-
-r81.setNextDialogueNode(dNode2);
-r82.setNextDialogueNode(dNode9);
-
-r91.setNextDialogueNode(dNode0);
-
-let Dialogue = new DialogueStructure(dNode0);
-
-export { Response, DialogueNode, Dialogue };
+export { test };
