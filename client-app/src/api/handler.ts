@@ -4,7 +4,7 @@ import { ChatbotDialogue } from "../components/Chatbot/types";
 
 import ChatbotData from "../data/chatbotData.json";
 
-const BASE_URL = "http://jamkelley.com/api";
+const BASE_URL = "https://jamkelley.com/api";
 
 export interface IAPIHandler {
   getChatbotDialogue(): Promise<ChatbotDialogue>;
