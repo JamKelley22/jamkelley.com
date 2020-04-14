@@ -29,8 +29,9 @@ class CustomRoute {
 
 const getResumeRoute = async (): Promise<string> => {
   try {
+    //Todo: move this to the handler
     const response = await axios.get(
-      "http://jamkelley.com/api/resume/pdf/status"
+      "https://jamkelley.com/api/resume/pdf/status"
     );
     if (response.data.error) {
       throw response.data;
@@ -41,7 +42,7 @@ const getResumeRoute = async (): Promise<string> => {
     }
     throw e;
   }
-  return "http://jamkelley.com/api/resume/pdf";
+  return "https://jamkelley.com/api/resume/pdf";
 };
 
 export const HOME: CustomRoute = new CustomRoute({
