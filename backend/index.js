@@ -4,14 +4,13 @@ const https = require("https");
 const path = require("path");
 const cors = require("cors");
 const fs = require("fs");
-const express = require("express");
 
 app.use(cors());
 app.use(helmet());
 
-var key = fs.readFileSync("/etc/letsencrypt/live/jamkelley.com/privkey.pem");
-var cert = fs.readFileSync("/etc/letsencrypt/live/jamkelley.com/cert.pem");
-var options = {
+const key = fs.readFileSync("/etc/letsencrypt/live/jamkelley.com/privkey.pem");
+const cert = fs.readFileSync("/etc/letsencrypt/live/jamkelley.com/cert.pem");
+const options = {
   key: key,
   cert: cert,
 };
