@@ -19,7 +19,10 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                sh 'sudo ./jenkins/scripts/test.sh' 
+                dir("jenkins/scripts") {
+                    sh "pwd"
+                    sh 'test.sh'
+                }
             }
         }
     }
