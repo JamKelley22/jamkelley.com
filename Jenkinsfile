@@ -19,8 +19,9 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                dir("jenkins/scripts") {
+                dir("jenkins/scripts/") {
                     sh "pwd"
+		    sh "ls"
                     sh 'test.sh'
                 }
             }
