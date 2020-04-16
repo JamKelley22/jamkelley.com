@@ -19,10 +19,10 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                dir("client-app/jenkins/scripts/") {
+                dir("jenkins/scripts/") {
                     sh "pwd"
 		            sh "ls"
-                    sh 'test.sh'
+                    sh './test.sh'
                 }
             }
         }
