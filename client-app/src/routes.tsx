@@ -10,6 +10,7 @@ import {
   Writing,
   Downloads,
   Speaking,
+  Creative,
 } from "./pages";
 
 import PageData from "./data/pageData.json";
@@ -51,7 +52,7 @@ export const HOME: CustomRoute = new CustomRoute({
   route: "/",
   onClick: () => {},
 });
-const Blog: CustomRoute = new CustomRoute({
+const BLOG: CustomRoute = new CustomRoute({
   name: "Blog",
   page: Error404,
   route: "/blog",
@@ -63,19 +64,19 @@ const PROJECTS: CustomRoute = new CustomRoute({
   route: "/projects",
   onClick: () => {},
 });
-const Contact: CustomRoute = new CustomRoute({
+const CONTACT: CustomRoute = new CustomRoute({
   name: "Contact",
   page: Error404,
   route: "/contact",
   onClick: () => {},
 });
-const Settings: CustomRoute = new CustomRoute({
+const SETTINGS: CustomRoute = new CustomRoute({
   name: "Settings",
   page: Error404,
   route: "/settings",
   onClick: () => {},
 });
-const Resume: CustomRoute = new CustomRoute({
+const RESUME: CustomRoute = new CustomRoute({
   name: "Resume",
   page: () => {},
   route: "#",
@@ -86,7 +87,7 @@ const Resume: CustomRoute = new CustomRoute({
     } catch (e) {}
   },
 });
-const Archive: CustomRoute = new CustomRoute({
+const ARCHIVE: CustomRoute = new CustomRoute({
   name: "Archive",
   page: () => {},
   route: "https://archive.jamkelley.com",
@@ -116,31 +117,39 @@ const DOWNLOADS: CustomRoute = new CustomRoute({
   route: "/downloads",
   onClick: () => {},
 });
+const CREATIVE: CustomRoute = new CustomRoute({
+  name: "Creative",
+  page: () => <Creative />,
+  route: "/creative",
+  onClick: () => {},
+});
 
 const ALL_ROUTES: CustomRoute[] = [
   HOME,
-  Blog,
+  BLOG,
   PROJECTS,
-  Contact,
+  CONTACT,
   DOWNLOADS,
-  Archive,
-  Settings,
+  ARCHIVE,
+  SETTINGS,
   ACCOLADES,
   WRITNG,
   SPEAKING,
+  CREATIVE,
 ];
 
 const NAVAGATION: CustomRoute[] = [
   HOME,
-  Resume,
-  //Blog,
+  RESUME,
+  BLOG,
   PROJECTS,
-  //Contact
+  CONTACT,
   DOWNLOADS,
   ACCOLADES,
-  Archive,
+  ARCHIVE,
   WRITNG,
   SPEAKING,
+  CREATIVE,
   //Settings
 ];
 
