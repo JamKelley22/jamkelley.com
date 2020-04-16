@@ -1,0 +1,36 @@
+{
+	"downloads": [
+		{
+			"name": "PunchClock",
+			"description": "Our project was an application designed for users who want a way to more easily keep track of how much time they work on their computer. The program is a timer that can either be manually turned on and off or it can be set up to automatically detect when a selected program is opened and keep track of time until it is closed.",
+			"link": "https://github.com/samstifter/punchclock",
+			"download_link": "https://jamkelley.com/api/downloads/PunchClock.exe",
+			"image": "https://github.com/samstifter/punchclock/blob/master/src/view/icon_small.png",
+			"os": ["win"]
+		},
+		{
+			"name": "Pentachoron",
+			"description": "Convert scanned PDF files to text!",
+			"link": "https://github.com/JamKelley22/Pentachoron",
+			"download_link": "https://jamkelley.com/api/downloads/Pentachoron-win32-x64.zip",
+			"image": "",
+			"os": ["win"]
+		},
+		{
+			"name": "Reversi - Minimax",
+			"description": "The classic Reversi game implimented in C# with an AI Minimax opponent",
+			"link": "https://github.com/JamKelley22/ReversiAI",
+			"download_link": "https://jamkelley.com/api/downloads/Reversi_linux-x64.zip",
+			"image": "",
+			"os": ["linux"]
+		},
+		{
+			"name": "Reversi - Minimax",
+			"description": "The classic Reversi game implimented in C# with an AI Minimax opponent",
+			"link": "https://github.com/JamKelley22/ReversiAI",
+			"download_link": "https://jamkelley.com/api/downloads/Reversi_portable.zip",
+			"image": "",
+			"os": ["portable"]
+		}
+	]
+}

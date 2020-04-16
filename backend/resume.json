@@ -1,0 +1,174 @@
+{
+  "selectedTemplate": 2,
+  "headings": {
+    "work": "",
+    "skills": "",
+    "projects": "",
+    "awards": ""
+  },
+  "basics": {
+    "name": "Jameel Kelley",
+    "phone": "563-599-3205",
+    "website": "jamkelley.com",
+    "email": "jamkelley22@gmail.com",
+    "location": {
+      "address": "Ames, IA"
+    }
+  },
+  "education": [
+    {
+      "institution": "Iowa State University",
+      "area": "Software Engineering",
+      "studyType": "BS",
+      "location": "Ames, IA",
+      "gpa": "3.25",
+      "startDate": "Aug 2016",
+      "endDate": "May 2020"
+    }
+  ],
+  "work": [
+    {
+      "company": "Buildertrend",
+      "position": "Software Development Intern",
+      "website": "",
+      "startDate": "May 2019",
+      "endDate": "Aug 2019",
+      "highlights": [
+        "Led a team of five engineers in technology discovery and implementation of 13 client facing application pages in a React environment",
+        "Tested code written by peers and created documentation upon discovery of issues"
+      ],
+      "location": "Omaha, NE"
+    },
+    {
+      "highlights": [
+        "Creating mixed reality learning environment (VR + Physical) to assist in more efficient and economical education of US personnel",
+        "Leveraging the latest Vive VR technology with the Unity engine to immerse users in a seamless virtual environment with physical equipment"
+      ],
+      "company": "Virtual Reality Applications Center",
+      "position": "Research Assistant",
+      "location": "Ames, IA",
+      "startDate": "Jan 2018",
+      "endDate": "Present"
+    },
+    {
+      "highlights": [
+        "Lead developer on VR farming hazard simulation application with aims to reduce the number of field accidents"
+      ],
+      "company": "Design Mill Inc",
+      "position": "Software Development Intern",
+      "location": "Dubuque, IA",
+      "startDate": "May 2018",
+      "endDate": "Aug 2018"
+    },
+    {
+      "highlights": [
+        "Developed a usability centered interface for online sustainability education",
+        "Wrote technical documents that were submitted to the International Review Board to conducting usability testing"
+      ],
+      "company": "Iowa State Human-Computer Interaction Lab ",
+      "position": "Research Intern",
+      "location": "Ames, IA",
+      "startDate": "May 2017",
+      "endDate": "Aug 2017"
+    }
+  ],
+  "skills": [
+    {
+      "level": "",
+      "keywords": [
+        "Java",
+        "Javascript",
+        "C#",
+        "SQL",
+        "HTML",
+        null
+      ],
+      "name": "Programming Languages"
+    },
+    {
+      "keywords": [
+        "Docker",
+        "CI/CD (Jenkins)",
+        "Git",
+        "Nginx",
+        "Blender"
+      ],
+      "name": "Tools"
+    },
+    {
+      "keywords": [
+        "Usability Analysis ",
+        "Agile Development ",
+        "Video Production "
+      ],
+      "name": "Processes"
+    }
+  ],
+  "projects": [
+    {
+      "url": "github.com/JamKelley22/RatePoint",
+      "keywords": [
+        "React",
+        "MySQL",
+        "Spring Boot"
+      ],
+      "name": "RatePoint",
+      "description": "A full stack solution to help local students and residents rate and review points of interest "
+    },
+    {
+      "keywords": [
+        "React"
+      ],
+      "name": "S-PASS",
+      "url": "coolslice-spass.herokuapp.com",
+      "description": "A tool to identify environmentally sustainable product architectures and their suppliers"
+    },
+    {
+      "keywords": [
+        "Electron"
+      ],
+      "name": "Pentachoron",
+      "description": "Convert scanned PDF files to text",
+      "url": "github.com/JamKelley22/Pentachoron"
+    },
+    {
+      "keywords": [
+        "Java"
+      ],
+      "name": "PunchClock",
+      "description": "A tool to track, store, and visualize work hours for employees ",
+      "url": "github.com/samstifter/punchclock"
+    },
+    {
+      "keywords": [
+        null
+      ],
+      "name": "Web Design with Accessibility in Mind",
+      "url": "github.com/JamKelley22/writing",
+      "description": "A look into designing websites with accessible features and potential pitfalls to look out for"
+    }
+  ],
+  "awards": [
+    {
+      "awarder": "Intel",
+      "title": "Intel Ultimate Coder Challenge Winner",
+      "date": "Dec 2018",
+      "summary": "Recognized for creating the most innovative \"revolutionary commercial application for the virtual world\""
+    },
+    {
+      "title": "Buildertrend Hackathon Crowd Favorite Winner",
+      "awarder": "Buildertrend",
+      "summary": "Created a proof of concept to add value to customer tool by increasing usability and adding features",
+      "date": "August 2019"
+    }
+  ],
+  "sections": [
+    "templates",
+    "profile",
+    "education",
+    "work",
+    "skills",
+    "projects",
+    "awards"
+  ]
+}
