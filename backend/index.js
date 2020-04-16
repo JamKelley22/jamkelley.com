@@ -100,8 +100,13 @@ app.get('/api/downloads/:filename/status', function(req, res) {
     	res.end(status(error, message));
 });
 
+//=====Chatbot=====
+app.get('/api/chatbot/json', function(req, res) {
+	res.sendFile(path.join(__dirname, "chatbotData.json"));
+});
+
 var server = https.createServer(options, app);
-const port = 8080;
+const port = 9090;
 server.listen(port, () => {
   console.log("Server starting on port: " + port);
 });
