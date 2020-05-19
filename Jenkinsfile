@@ -10,10 +10,10 @@ pipeline {
     }
     stages {
         stage('Build') {
-            dir("client-app") {
-                steps {
+            steps {
+                dir("client-app") {
                     sh 'npm install'
-                }
+                } 
             }
         }
         stage('Test') { 
