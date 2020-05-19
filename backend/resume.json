@@ -2,7 +2,6 @@
   "selectedTemplate": 2,
   "headings": {
     "work": "",
-    "skills": "",
     "projects": "",
     "awards": ""
   },
@@ -21,55 +20,72 @@
       "area": "Software Engineering",
       "studyType": "BS",
       "location": "Ames, IA",
-      "gpa": "3.25",
+      "gpa": "3.31",
       "startDate": "Aug 2016",
       "endDate": "May 2020"
+    },
+    {
+      "institution": "Iowa State University",
+      "location": "Ames, IA",
+      "studyType": "MS",
+      "area": "Human-Computer Interaction",
+      "endDate": "Expected May 2022"
     }
   ],
   "work": [
     {
-      "company": "Buildertrend",
-      "position": "Software Development Intern",
       "website": "",
-      "startDate": "May 2019",
-      "endDate": "Aug 2019",
+      "highlights": [
+        "Working in a cross-disciplinary team to create accurate simulations in a virtual space"
+      ],
+      "company": "Virtual Reality Applications Center",
+      "position": "Research Assistant",
+      "location": "Ames, IA",
+      "startDate": "May 2020",
+      "endDate": "Present"
+    },
+    {
       "highlights": [
         "Led a team of five engineers in technology discovery and implementation of 13 client facing application pages in a React environment",
         "Tested code written by peers and created documentation upon discovery of issues"
       ],
-      "location": "Omaha, NE"
+      "endDate": "Aug 2019",
+      "startDate": "May 2019",
+      "location": "Omaha, NE",
+      "position": "Software Development Intern",
+      "company": "Buildertrend"
     },
     {
       "highlights": [
         "Creating mixed reality learning environment (VR + Physical) to assist in more efficient and economical education of US personnel",
         "Leveraging the latest Vive VR technology with the Unity engine to immerse users in a seamless virtual environment with physical equipment"
       ],
-      "company": "Virtual Reality Applications Center",
-      "position": "Research Assistant",
-      "location": "Ames, IA",
+      "endDate": "May 2020",
       "startDate": "Jan 2018",
-      "endDate": "Present"
+      "location": "Ames, IA",
+      "position": "Student Researcher ",
+      "company": "Virtual Reality Applications Center"
     },
     {
       "highlights": [
         "Lead developer on VR farming hazard simulation application with aims to reduce the number of field accidents"
       ],
-      "company": "Design Mill Inc",
-      "position": "Software Development Intern",
-      "location": "Dubuque, IA",
+      "endDate": "Aug 2018",
       "startDate": "May 2018",
-      "endDate": "Aug 2018"
+      "location": "Dubuque, IA",
+      "position": "Software Development Intern",
+      "company": "Design Mill Inc."
     },
     {
       "highlights": [
         "Developed a usability centered interface for online sustainability education",
         "Wrote technical documents that were submitted to the International Review Board to conducting usability testing"
       ],
-      "company": "Iowa State Human-Computer Interaction Lab ",
-      "position": "Research Intern",
-      "location": "Ames, IA",
+      "endDate": "Aug 2017",
       "startDate": "May 2017",
-      "endDate": "Aug 2017"
+      "location": "Ames, IA",
+      "position": "Research Intern",
+      "company": "Iowa State Human-Computer Interaction Lab "
     }
   ],
   "skills": [
@@ -77,7 +93,7 @@
       "level": "",
       "keywords": [
         "Java",
-        "Javascript",
+        "Typescript",
         "C#",
         "SQL",
         "HTML",
@@ -87,11 +103,11 @@
     },
     {
       "keywords": [
-        "Docker",
-        "CI/CD (Jenkins)",
+        "CI/CD",
         "Git",
         "Nginx",
-        "Blender"
+        "Blender",
+        "Unity"
       ],
       "name": "Tools"
     },
@@ -106,14 +122,18 @@
   ],
   "projects": [
     {
-      "url": "github.com/JamKelley22/RatePoint",
+      "url": "sdmay20-25.sd.ece.iastate.edu",
       "keywords": [
         "React",
-        "MySQL",
-        "Spring Boot"
+        "PostgreSQL",
+        "Spring",
+        "Hibernate",
+        "Python",
+        "Tensorflow",
+        "Java"
       ],
-      "name": "RatePoint",
-      "description": "A full stack solution to help local students and residents rate and review points of interest "
+      "name": "Consumer-Aware Warehouse Management",
+      "description": "A proof of concept software for prediction of automatic optimal ordering for warehouses"
     },
     {
       "keywords": [
@@ -121,15 +141,7 @@
       ],
       "name": "S-PASS",
       "url": "coolslice-spass.herokuapp.com",
-      "description": "A tool to identify environmentally sustainable product architectures and their suppliers"
-    },
-    {
-      "keywords": [
-        "Electron"
-      ],
-      "name": "Pentachoron",
-      "description": "Convert scanned PDF files to text",
-      "url": "github.com/JamKelley22/Pentachoron"
+      "description": "Frontend solution identifying environmentally sustainable product architectures and suppliers"
     },
     {
       "keywords": [
@@ -138,14 +150,6 @@
       "name": "PunchClock",
       "description": "A tool to track, store, and visualize work hours for employees ",
       "url": "github.com/samstifter/punchclock"
-    },
-    {
-      "keywords": [
-        null
-      ],
-      "name": "Web Design with Accessibility in Mind",
-      "url": "github.com/JamKelley22/writing",
-      "description": "A look into designing websites with accessible features and potential pitfalls to look out for"
     }
   ],
   "awards": [
@@ -154,12 +158,6 @@
       "title": "Intel Ultimate Coder Challenge Winner",
       "date": "Dec 2018",
       "summary": "Recognized for creating the most innovative \"revolutionary commercial application for the virtual world\""
-    },
-    {
-      "title": "Buildertrend Hackathon Crowd Favorite Winner",
-      "awarder": "Buildertrend",
-      "summary": "Created a proof of concept to add value to customer tool by increasing usability and adding features",
-      "date": "August 2019"
     }
   ],
   "sections": [
