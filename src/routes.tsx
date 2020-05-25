@@ -13,8 +13,6 @@ import {
   Creative,
 } from "./pages";
 
-import PageData from "./data/pageData.json";
-
 class CustomRoute {
   name: string;
   route: string;
