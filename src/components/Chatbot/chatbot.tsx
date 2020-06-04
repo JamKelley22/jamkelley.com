@@ -12,7 +12,7 @@ import {
 import { IChatbotPresentationalProps } from "./chatbotPresentational";
 
 import "./chatbot.scss";
-import { Stack } from "util/stack";
+import Stack from "util/stack";
 
 export interface IChatbotProps {
   handler?: IAPIHandler;
