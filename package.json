@@ -26,6 +26,7 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
+    "dev": "concurrently \"nodemon --exec \"serve\" --cors --listen 5000 src/data/ \" \"react-scripts start\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "cross-env CI=true react-scripts test --env=jsdom",
@@ -45,5 +46,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "cross-env": "^7.0.2",
+    "nodemon": "^2.0.4",
+    "serve": "^11.3.1"
   }
 }

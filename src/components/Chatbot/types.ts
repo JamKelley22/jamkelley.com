@@ -15,9 +15,12 @@ export class DialogueStructure {
 export class DialogueNode {
   responses: Response[];
   prompt: string;
+  tags: string[];
+
   constructor(data: DialogueNodeData) {
     this.prompt = data.prompt;
     this.responses = data.responseSet.responses;
+    this.tags = data.tags;
   }
 }
 
@@ -32,15 +35,15 @@ export class Response {
     this.nextNodeIndex = data.nextNodeIndex;
   }
 
-  setNextDialogueNode(nextNode: DialogueNode | null) {
+  setNextDialogueNode = (nextNode: DialogueNode | null) => {
     this.nextNode = nextNode;
-  }
+  };
 }
 
 export class ResponseSet {
   responses: Response[];
-  constructor(responses: Response[]) {
-    this.responses = responses;
+  constructor(data: any) {
+    this.responses = data.map((response: any) => new Response(response));
   }
 }
 
@@ -80,6 +83,7 @@ export class ChatbotDialogue {
         new DialogueNode({
           prompt: dialogueNodeData.prompt,
           responseSet: this.responseSets[dialogueNodeData.responseSet],
+          tags: dialogueNodeData.tags,
         })
     );
 
@@ -88,18 +92,36 @@ export class ChatbotDialogue {
         this.dialogueNodeData[response.nextNodeIndex]
       )
     );
+    this.dialogueNodeData.forEach((node: DialogueNode) =>
+      node.responses.forEach((response: Response) =>
+        response.setNextDialogueNode(
+          this.dialogueNodeData[response.nextNodeIndex]
+        )
+      )
+    );
   }
 
-  createDialogueStructure = (): DialogueStructure =>
-    new DialogueStructure(this.dialogueNodeData[0]);
+  createDialogueStructure = (): DialogueStructure => {
+    return new DialogueStructure(this.dialogueNodeData[0]);
+  };
 }
 
 type DialogueNodeData = {
   prompt: string;
   responseSet: ResponseSet;
+  tags: string[];
 };
 
 type ResponseData = {
   text: string;
   nextNodeIndex: number;
 };
+
+export class EventFunction {
+  fn: () => void;
+  name: string;
+  constructor(data: any) {
+    this.fn = data.fn;
+    this.name = data.name;
+  }
+}

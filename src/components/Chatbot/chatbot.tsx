@@ -1,19 +1,32 @@
 import React from "react";
-import { Button, Spin } from "antd";
+import { Spin } from "antd";
 
 import { IAPIHandler, FakeAPIHandler, APIHandler } from "../../api/handler";
-import { Response, DialogueNode, ChatbotDialogue } from "./types";
+import {
+  Response,
+  DialogueNode,
+  ChatbotDialogue,
+  EventFunction,
+} from "./types";
+
+import { IChatbotPresentationalProps } from "./chatbotPresentational";
 
 import "./chatbot.scss";
+import { Stack } from "util/stack";
 
 export interface IChatbotProps {
   handler?: IAPIHandler;
+  render: (props: IChatbotPresentationalProps) => JSX.Element;
+  loadingElement?: JSX.Element;
+  dataFileName: string;
 }
 
 interface IChatbotState {
   currNode: DialogueNode | null;
   currResponses: Response[];
 }
+
+const previousNodes: Stack<DialogueNode> = new Stack();
 
 export default class Chatbot extends React.Component<
   IChatbotProps,
@@ -31,12 +44,18 @@ export default class Chatbot extends React.Component<
     currResponses: [],
   };
 
+  getEvents = (): EventFunction[] => {
+    return [];
+  };
+
   componentDidMount() {
     this.initDialogue();
   }
 
   initDialogue = async () => {
-    const dialogue: ChatbotDialogue = await this.props.handler!.getChatbotDialogue();
+    const dialogue: ChatbotDialogue = await this.props.handler!.getChatbotDialogueFromTwine(
+      this.props.dataFileName
+    );
     const currDNode: DialogueNode | null = dialogue.createDialogueStructure()
       .currDialogueNode;
     if (currDNode) {
@@ -49,6 +68,8 @@ export default class Chatbot extends React.Component<
   };
 
   update = (newNode: DialogueNode, newResponses: Response[]) => {
+    if (this.state.currNode) previousNodes.push(this.state.currNode);
+
     this.setState({
       currNode: newNode,
       currResponses: newResponses,
@@ -57,31 +78,45 @@ export default class Chatbot extends React.Component<
 
   updateWithResponse = (response: Response) => {
     let dNode = response.nextNode;
+
     if (dNode) {
+      dNode.tags.forEach((tag: string) => {
+        const event: EventFunction | undefined = this.getEvents().find(
+          (event: EventFunction) => event.name === tag
+        );
+
+        if (event) event.fn();
+      });
+
       let newResponses = dNode.responses;
       this.update(dNode, newResponses);
-    } else {
     }
+  };
+
+  goBackNode = (): boolean => {
+    let prevNode: DialogueNode | undefined;
+    if (previousNodes.isEmpty()) return false;
+
+    prevNode = previousNodes.pop();
+    if (!prevNode) return false;
+    this.setState({
+      currNode: prevNode,
+      currResponses: prevNode.responses,
+    });
+    return true;
   };
 
   public render() {
     const { currNode, currResponses } = this.state;
+    const { render } = this.props;
     if (!currNode) return <Spin />;
-    return (
-      <div id="chatbot">
-        <h3>{currNode!.prompt}</h3>
-        <div id="allResponses">
-          {currResponses.map((response: Response, i: number) => {
-            return (
-              <div key={i} id="response">
-                <Button onClick={() => this.updateWithResponse(response)}>
-                  {response.text}
-                </Button>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    );
+
+    return render({
+      currNode: currNode,
+      currResponses: currResponses,
+      updateWithResponse: this.updateWithResponse,
+      goBackNode: this.goBackNode,
+      stack: previousNodes,
+    });
   }
 }

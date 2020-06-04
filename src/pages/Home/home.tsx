@@ -5,6 +5,11 @@ import { Chatbot } from "../../components";
 
 import Ebet from "../../images/ebet.png";
 import "./home.scss";
+import { Spin } from "antd";
+import {
+  IChatbotPresentationalProps,
+  ChatbotPresentational,
+} from "components/Chatbot/chatbotPresentational";
 
 const Home: React.FC = () => {
   return (
@@ -19,23 +24,15 @@ const Home: React.FC = () => {
       <br />
       <hr style={{ width: "80%" }} />
       <br />
-      <Chatbot />
+      <Chatbot
+        dataFileName={"WebsiteWelcome"}
+        loadingElement={<Spin />}
+        render={(props: IChatbotPresentationalProps) => (
+          <ChatbotPresentational {...props} />
+        )}
+      />
     </div>
   );
 };
 
 export default Home;
-
-/*
-<div id="info">
-        <div id="left">
-          <h1>Jameel Kelley</h1>
-          <h3>Software Engineer @ ISU</h3>
-          <Button>Hire Me</Button>
-        </div>
-
-        <img src={Ebet} id="ebet" />
-      </div>
-
-      
-*/
