@@ -1,6 +1,7 @@
 import Home from "./Home/home";
 import Projects from "./Projects/projects";
 import Accolades from "./Accolades/accolades";
+import Contact from "./Contact/contact";
 import Writing from "./Writing/writing";
 import Downloads from "./Downloads/downloads";
 import Speaking from "./Speaking/speaking";
@@ -12,6 +13,7 @@ export {
   Home,
   Projects,
   Accolades,
+  Contact,
   Writing,
   Downloads,
   Speaking,

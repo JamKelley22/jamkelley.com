@@ -11,6 +11,7 @@ import {
   Downloads,
   Speaking,
   Creative,
+  Contact,
 } from "./pages";
 
 class CustomRoute {
@@ -64,7 +65,7 @@ const PROJECTS: CustomRoute = new CustomRoute({
 });
 const CONTACT: CustomRoute = new CustomRoute({
   name: "Contact",
-  page: Error404,
+  page: Contact,
   route: "/contact",
   onClick: () => {},
 });
@@ -139,15 +140,15 @@ const ALL_ROUTES: CustomRoute[] = [
 const NAVAGATION: CustomRoute[] = [
   HOME,
   RESUME,
-  BLOG,
+  //BLOG,
   PROJECTS,
-  CONTACT,
+  //CONTACT,
   DOWNLOADS,
   ACCOLADES,
   ARCHIVE,
   WRITNG,
-  SPEAKING,
-  CREATIVE,
+  //SPEAKING,
+  //CREATIVE,
   //Settings
 ];
 

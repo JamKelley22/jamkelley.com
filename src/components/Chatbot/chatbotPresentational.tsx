@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Button } from "antd";
 
-import { Stack } from "util/stack";
+import Stack from "util/stack";
 import { DialogueNode, Response } from "./types";
 
 export interface IChatbotPresentationalProps {
