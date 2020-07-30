@@ -49,6 +49,6 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
-          key: ${{ secrets.KEY }}
+          key: ${{ secrets.SSHKEY }}
           source: "build"
           target: ${{ secrets.TARGET_DIR }}
