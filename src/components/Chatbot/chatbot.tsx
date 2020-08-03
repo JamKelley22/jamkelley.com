@@ -1,7 +1,7 @@
 import React from "react";
 import { Spin } from "antd";
 
-import { IAPIHandler, FakeAPIHandler, APIHandler } from "../../api/handler";
+import { IAPIHandler } from "../../api/handler";
 import {
   Response,
   DialogueNode,
