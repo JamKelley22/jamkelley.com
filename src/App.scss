@@ -56,3 +56,15 @@
 
 #campaign-zero-widget {
 }
+
+.non-prod-use-local-api-switch {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  align-items: center;
+  position: absolute;
+  z-index: 100;
+  span {
+    padding-right: 10px;
+  }
+}

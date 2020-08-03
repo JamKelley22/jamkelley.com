@@ -71,3 +71,87 @@ export class PassageResponse {
     this.nextPassageName = content[1];
   }
 }
+
+export class Download {
+  name: string;
+  description: string;
+  link: string;
+  download_link: string;
+  image: string;
+  os: string[];
+
+  constructor(data: any) {
+    this.name = data.name;
+    this.description = data.description;
+    this.link = data.link;
+    this.download_link = data.download_link;
+    this.image = data.image;
+    this.os = data.os;
+  }
+}
+
+export class Writing {
+  name: string;
+
+  constructor(data: any) {
+    this.name = data.name;
+  }
+}
+
+export class Accolade {
+  title: string;
+  detail: string;
+  description: string;
+  url: string;
+  fallbackURL?: string;
+  startDate: moment.Moment;
+  endDate?: moment.Moment;
+  location?: string;
+
+  constructor(data: any) {
+    this.title = data.title;
+    this.detail = data.detail;
+    this.description = data.description;
+    this.url = data.url;
+    this.fallbackURL = data.fallbackURL;
+    this.startDate = data.startDate;
+    this.endDate = data.endDate;
+    this.location = data.location;
+  }
+}
+
+export class Project {
+  name: string;
+  href: string;
+  links: ProjectLink[];
+  video: string;
+  github: string;
+  tags: any[];
+  start_date: string;
+  end_date: string;
+  is_game_jam: boolean;
+  jam_season_year: string;
+
+  constructor(data: any) {
+    this.name = data.name;
+    this.href = data.href;
+    this.links = data.links.map((link: any) => new ProjectLink(link));
+    this.video = data.video;
+    this.github = data.github;
+    this.tags = data.tags;
+    this.start_date = data.start_date;
+    this.end_date = data.end_date;
+    this.is_game_jam = data.is_game_jam;
+    this.jam_season_year = data.jam_season_year;
+  }
+}
+
+export class ProjectLink {
+  name: string;
+  link: string;
+
+  constructor(data: any) {
+    this.name = data.name;
+    this.link = data.link;
+  }
+}

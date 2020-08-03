@@ -13,6 +13,7 @@ import { IChatbotPresentationalProps } from "./chatbotPresentational";
 
 import "./chatbot.scss";
 import Stack from "util/stack";
+import { APIContext } from "context/apiContext";
 
 export interface IChatbotProps {
   handler?: IAPIHandler;
@@ -32,12 +33,7 @@ export default class Chatbot extends React.Component<
   IChatbotProps,
   IChatbotState
 > {
-  static defaultProps = {
-    handler:
-      process.env.NODE_ENV === "production"
-        ? new APIHandler()
-        : new FakeAPIHandler(),
-  };
+  static contextType = APIContext;
 
   state: IChatbotState = {
     currNode: null,
@@ -53,7 +49,9 @@ export default class Chatbot extends React.Component<
   }
 
   initDialogue = async () => {
-    const dialogue: ChatbotDialogue = await this.props.handler!.getChatbotDialogueFromTwine(
+    const handler: IAPIHandler = this.context;
+
+    const dialogue: ChatbotDialogue = await handler.getChatbotDialogue(
       this.props.dataFileName
     );
     const currDNode: DialogueNode | null = dialogue.createDialogueStructure()

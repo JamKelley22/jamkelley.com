@@ -2,7 +2,7 @@ import Home from "./Home/home";
 import Projects from "./Projects/projects";
 import Accolades from "./Accolades/accolades";
 import Contact from "./Contact/contact";
-import Writing from "./Writing/writing";
+import Writings from "./Writing/writings";
 import Downloads from "./Downloads/downloads";
 import Speaking from "./Speaking/speaking";
 import Creative from "./Creative/creative";
@@ -14,7 +14,7 @@ export {
   Projects,
   Accolades,
   Contact,
-  Writing,
+  Writings,
   Downloads,
   Speaking,
   Creative,

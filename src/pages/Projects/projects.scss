@@ -1,0 +1,11 @@
+.projectCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+}
+
+.projectCard {
+  width: 300px;
+  margin: 20px !important;
+}

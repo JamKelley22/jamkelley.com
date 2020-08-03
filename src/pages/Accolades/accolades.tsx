@@ -1,22 +1,42 @@
 import * as React from "react";
+import { APIContext } from "context/apiContext";
+import { IAPIHandler } from "api/handler";
+import { Accolade } from "api/types";
+import { AccoladesPresentational } from "./accoladesPresentational";
 
-interface IAccoladesProps {}
+export interface IAccoladesProps {}
 
-const Accolades: React.FunctionComponent<IAccoladesProps> = props => {
-  return (
-    <div>
-      <ul>
-        <li>
-          <a href="https://software.intel.com/en-us/ultimate-coder-vr/team4">
-            Intel Ultimate Coder Challenge Winner
-          </a>
-        </li>
-        <li>
-          <a href="http://www.vrac.iastate.edu/hci/reu/reu2017/">REU</a>
-        </li>
-      </ul>
-    </div>
-  );
-};
+interface IAccoladesState {
+  accolades: Accolade[];
+  loading: boolean;
+}
 
-export default Accolades;
+export default class Accolades extends React.Component<
+  IAccoladesProps,
+  IAccoladesState
+> {
+  static contextType = APIContext;
+
+  state = {
+    accolades: [],
+    loading: true,
+  };
+
+  componentDidMount() {
+    this.getAccolades();
+  }
+
+  getAccolades = async () => {
+    const handler: IAPIHandler = this.context;
+    const accolades: Accolade[] = await handler.getAccolades();
+    this.setState({
+      accolades: accolades,
+      loading: false,
+    });
+  };
+
+  public render() {
+    const { accolades } = this.state;
+    return <AccoladesPresentational accolades={accolades} />;
+  }
+}

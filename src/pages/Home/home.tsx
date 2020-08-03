@@ -25,7 +25,7 @@ const Home: React.FC = () => {
       <hr style={{ width: "80%" }} />
       <br />
       <Chatbot
-        dataFileName={"WebsiteWelcome"}
+        dataFileName={"chatbot_jamkelley.com"}
         loadingElement={<Spin />}
         render={(props: IChatbotPresentationalProps) => (
           <ChatbotPresentational {...props} />

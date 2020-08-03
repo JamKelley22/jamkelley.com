@@ -1,126 +1,98 @@
 import React from "react";
-import axios from "axios";
-import { message } from "antd";
 
 import {
   Home,
   Error404,
   Projects,
   Accolades,
-  Writing,
+  Writings,
   Downloads,
   Speaking,
   Creative,
   Contact,
 } from "./pages";
-
-class CustomRoute {
-  name: string;
-  route: string;
-  page: React.ReactNode;
-  onClick: () => void;
-  constructor(data: any) {
-    this.name = data.name;
-    this.route = data.route;
-    this.page = data.page;
-    this.onClick = data.onClick;
-  }
-}
-
-const getResumeRoute = async (): Promise<string> => {
-  try {
-    //Todo: move this to the handler
-    const response = await axios.get(
-      "https://jamkelley.com/api/resume/pdf/status"
-    );
-    if (response.data.error) {
-      throw response.data;
-    }
-  } catch (e) {
-    if (e.response.data.error) {
-      message.error(e.response.data.message);
-    }
-    throw e;
-  }
-  return "https://jamkelley.com/api/resume/pdf";
-};
+import { ArchiveURL } from "./constants";
+import { IAPIHandler } from "api/handler";
+import { CustomRoute } from "types";
 
 export const HOME: CustomRoute = new CustomRoute({
   name: "Home",
-  page: Home,
+  page: () => <Home />,
   route: "/",
-  onClick: () => {},
+  onClick: (handler: IAPIHandler) => {},
 });
 const BLOG: CustomRoute = new CustomRoute({
   name: "Blog",
-  page: Error404,
+  page: () => <Error404 />,
   route: "/blog",
-  onClick: () => {},
+  onClick: (handler: IAPIHandler) => {},
 });
 const PROJECTS: CustomRoute = new CustomRoute({
   name: "Projects",
-  page: Projects,
+  page: () => <Projects />,
   route: "/projects",
-  onClick: () => {},
+  onClick: (handler: IAPIHandler) => {},
 });
 const CONTACT: CustomRoute = new CustomRoute({
   name: "Contact",
-  page: Contact,
+  page: () => <Contact />,
   route: "/contact",
-  onClick: () => {},
+  onClick: (handler: IAPIHandler) => {},
 });
 const SETTINGS: CustomRoute = new CustomRoute({
   name: "Settings",
-  page: Error404,
+  page: () => <Error404 />,
   route: "/settings",
-  onClick: () => {},
+  onClick: (handler: IAPIHandler) => {},
 });
 const RESUME: CustomRoute = new CustomRoute({
   name: "Resume",
   page: () => {},
   route: "#",
-  onClick: async () => {
+  onClick: async (handler: IAPIHandler) => {
     try {
-      const resumeRoute = await getResumeRoute();
+      const resumeRoute = await handler.getResumeRoute();
       window.open(resumeRoute);
-    } catch (e) {}
+    } catch (e) {
+      console.error(e);
+    }
   },
 });
 const ARCHIVE: CustomRoute = new CustomRoute({
   name: "Archive",
   page: () => {},
-  route: "https://archive.jamkelley.com",
-  onClick: () => {},
+  route: ArchiveURL,
+  onClick: (handler: IAPIHandler) => {},
 });
 const ACCOLADES: CustomRoute = new CustomRoute({
   name: "Accolades",
-  page: Accolades,
+  page: () => <Accolades />,
   route: "/accolades",
-  onClick: () => {},
+  onClick: (handler: IAPIHandler) => {},
 });
 const WRITNG: CustomRoute = new CustomRoute({
   name: "Writing",
-  page: () => <Writing />,
+  page: () => <Writings />,
   route: "/writing",
-  onClick: () => {},
+  onClick: (handler: IAPIHandler) => {},
 });
 const SPEAKING: CustomRoute = new CustomRoute({
   name: "Speaking",
   page: () => <Speaking />, //Todo
   route: "/speaking",
-  onClick: () => {},
+  onClick: (handler: IAPIHandler) => {},
 });
 const DOWNLOADS: CustomRoute = new CustomRoute({
   name: "Downloads",
   page: () => <Downloads />,
   route: "/downloads",
-  onClick: () => {},
+  onClick: (handler: IAPIHandler) => {},
 });
 const CREATIVE: CustomRoute = new CustomRoute({
   name: "Creative",
   page: () => <Creative />,
   route: "/creative",
-  onClick: () => {},
+  onClick: (handler: IAPIHandler) => {},
 });
 
 const ALL_ROUTES: CustomRoute[] = [
@@ -145,7 +117,7 @@ const NAVAGATION: CustomRoute[] = [
   //CONTACT,
   DOWNLOADS,
   ACCOLADES,
-  ARCHIVE,
+  //ARCHIVE,
   WRITNG,
   //SPEAKING,
   //CREATIVE,
