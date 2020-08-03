@@ -12,7 +12,7 @@ export function stringToHash(val: string) {
   return hash;
 }
 
-function intToHex(i) {
+function intToHex(i: number) {
   var c = (i & 0x00ffffff).toString(16).toUpperCase();
 
   return "00000".substring(0, 6 - c.length) + c;

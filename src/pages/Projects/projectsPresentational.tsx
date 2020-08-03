@@ -4,7 +4,7 @@ import * as React from "react";
 import { Project, ProjectLink } from "api/types";
 
 import "./projects.scss";
-import { stringToColor } from "../../util/util";
+// import { stringToColor } from "../../util/util";
 
 export interface IProjectsPresentationalProps {
   projects: Project[];
