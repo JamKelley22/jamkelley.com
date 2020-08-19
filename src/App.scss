@@ -1,5 +1,7 @@
 .App {
   height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -32,6 +34,10 @@
 #navagationLinksContainer {
   display: flex;
   justify-content: center;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  background-color: white;
 }
 
 #blm-overlay {
@@ -63,7 +69,7 @@
   padding: 10px;
   align-items: center;
   position: absolute;
-  z-index: 100;
+  z-index: 101;
   span {
     padding-right: 10px;
   }

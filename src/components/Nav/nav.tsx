@@ -2,9 +2,11 @@ import React from "react";
 import { Link, RouteComponentProps } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 
-import { CustomRoute, NAVAGATION } from "./routes";
+import { CustomRoute, NAVAGATION } from "../../routes";
 import { APIContext } from "context/apiContext";
 import { IAPIHandler } from "api/handler";
+
+import "./nav.scss";
 
 export interface INavProps {
   seperator?: string;

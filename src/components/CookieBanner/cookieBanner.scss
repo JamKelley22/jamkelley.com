@@ -1,0 +1,76 @@
+.cookieBanner {
+  position: sticky;
+  width: 100%;
+  bottom: 0px;
+  background-color: rgb(51, 96, 144);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-size: medium;
+
+  p {
+    margin-bottom: 0px;
+    padding: 10px;
+    padding-bottom: 0px;
+    flex: 13 4;
+  }
+}
+
+.cookieBanner__buttons {
+  flex: 6 6;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  button {
+    background-color: rgb(89, 195, 195);
+    border-color: rgb(60, 133, 133);
+    margin: 10px;
+    color: white;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .cookieBanner__buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    button {
+      width: 80%;
+      margin-bottom: 5px;
+      margin-top: 0px;
+    }
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .cookieBanner {
+    flex-direction: row;
+    p {
+      padding-bottom: 10px;
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .cookieBanner {
+    p {
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+  }
+}
