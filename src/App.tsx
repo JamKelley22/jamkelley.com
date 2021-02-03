@@ -27,7 +27,6 @@ library.add(fab, faLink);
 const isProduction = process.env.NODE_ENV === "production";
 
 const App: React.FC = (props: any) => {
-  const [blmOverlayVisible, setBlmOverlayVisible] = useState(true);
   const [useLocalAPI, setUseLocalAPI] = useState(true);
   const [allowCookies, setAllowCookies] = useState(false);
   const [cookieBannerVisible, setCookieBannerVisible] = useState(true);
@@ -42,27 +41,6 @@ const App: React.FC = (props: any) => {
     <CookieContext.Provider value={allowCookies}>
       <APIContext.Provider value={handler}>
         <div className="App">
-          {blmOverlayVisible && (
-            <div
-              id="blm-overlay"
-              style={{ visibility: isProduction ? "inherit" : "hidden" }}
-            >
-              <div id="blm-widget">
-                <CloseCircleTwoTone
-                  id="campaign-zero-widget--closebutton"
-                  style={{
-                    fontSize: "24px",
-                    transform: "translate(-5px, 30px)",
-                    zIndex: 101,
-                  }}
-                  twoToneColor="#eb2f96"
-                  onClick={() => setBlmOverlayVisible(false)}
-                />
-                <div id="campaign-zero-widget" />
-              </div>
-            </div>
-          )}
-
           {!isProduction && (
             <div className="non-prod-use-local-api-switch">
               <span>Use Local API</span>
