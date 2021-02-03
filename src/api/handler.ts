@@ -6,7 +6,7 @@ import { chatbotXMLToJSON } from "./util";
 import { Download, Writing, Accolade, Project } from "./types";
 import { message } from "antd";
 
-const BASE_URL = "https://jamkelley.com/api";
+const BASE_URL = "https://api.jamkelley.com";
 const LOCAL_API_BASE_URL = "http://localhost:4000/api";
 const DEV_BASE_URL = "http://localhost:5000";
 
