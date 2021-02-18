@@ -85,3 +85,4 @@ typings/
 
 # Enviroment for editing
 .vscode
+.code-workspace
